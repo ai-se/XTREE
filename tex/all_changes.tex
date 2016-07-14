@@ -1,0 +1,22 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{figure*}[htbp!]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
+         & wmc & dit & noc & cbo & rfc & lcom & ca & ce & npm & lcom3 & loc & dam & moa & mfa & cam & ic & cbm & amc & max\_cc & avg\_cc \bigstrut\\ \hline
+Ant      &  & & & $-$ &$-$&  & &$+$& & &$-$& & &$-$& & &  &$+$&     &$+$\bigstrut\\ \hline
+
+Ivy      &$-$& & &$-$&$+$&$-$&$+$& &$-$&$-$&$-$& & & &$+$& & & &     &      \bigstrut\\ \hline
+
+Poi      & & & &$+$&$-$& & & & & &$-$& & & &$-$& & & & & \bigstrut\\ \hline
+
+Lucene   &$-$& & &$+$&$+$& &$+$& & &$-$&$-$& & & &$-$& & &$-$& &$-$\bigstrut\\ \hline
+
+Jedit    & & & & &$-$& & & & & & & & & & & & & & &     \bigstrut\\ 
+
+\end{tabular}}
+
+\caption{Results of Wilcoxon Signed Ranked Test studying the statistical significance of co-varying changes proposed by XTREE. Each dataset contains 20 Static Code Metrics (for a description of each of these metrics, please refer to~\cite{me12d}). The rows contain the datasets, and the columns denote the metrics. A ``$+$'' symbol represents a recommendation that requires a significant statistical increase (with a p-value$\le$0.05), and likewise, a ``$-$'' represents a significant statistical decrease.} 
+\label{fig:multcomp}
+\end{figure*}
