@@ -1,3 +1,133 @@
+@article{mkaouer2015many,
+  title={Many-objective software remodularization using NSGA-III},
+  author={Mkaouer, Wiem and Kessentini, Marouane and Shaout, Adnan and Koligheu, Patrice and Bechikh, Slim and Deb, Kalyanmoy and Ouni, Ali},
+  journal={ACM Transactions on Software Engineering and Methodology (TOSEM)},
+  volume={24},
+  number={3},
+  pages={17},
+  year={2015},
+  publisher={ACM}
+}
+
+@inproceedings{krishna16,
+title="Too Much Automation? The ``Bellwether'' Effect and its Implications for Transfer Learning},
+author="R. Krishna, T.Menzies, L. Layman",
+year=2016,
+booktitle="ASE'16"
+}
+
+@article{Ma2012,
+abstract = {Context: Software defect prediction studies usually built models using within-company data, but very few focused on the prediction models trained with cross-company data. It is difficult to employ these models which are built on the within-company data in practice, because of the lack of these local data repositories. Recently, transfer learning has attracted more and more attention for building classifier in target domain using the data from related source domain. It is very useful in cases when distributions of training and test instances differ, but is it appropriate for cross-company software defect prediction? Objective: In this paper, we consider the cross-company defect prediction scenario where source and target data are drawn from different companies. In order to harness cross company data, we try to exploit the transfer learning method to build faster and highly effective prediction model. Method: Unlike the prior works selecting training data which are similar from the test data, we proposed a novel algorithm called Transfer Naive Bayes (TNB), by using the information of all the proper features in training data. Our solution estimates the distribution of the test data, and transfers cross-company data information into the weights of the training data. On these weighted data, the defect prediction model is built. Results: This article presents a theoretical analysis for the comparative methods, and shows the experiment results on the data sets from different organizations. It indicates that TNB is more accurate in terms of AUC (The area under the receiver operating characteristic curve), within less runtime than the state of the art methods. Conclusion: It is concluded that when there are too few local training data to train good classifiers, the useful knowledge from different-distribution training data on feature level may help. We are optimistic that our transfer learning method can guide optimal resource allocation strategies, which may reduce software testing cost and increase effectiveness of software testing process. {\textcopyright} 2011 Elsevier B.V. All rights reserved.},
+author = {Ma, Ying and Luo, Guangchun and Zeng, Xue and Chen, Aiguo},
+doi = {10.1016/j.infsof.2011.09.007},
+issn = {09505849},
+journal = {Information and Software Technology},
+keywords = {Different distribution,Machine learning,Naive Bayes,Software defect prediction,Transfer learning},
+number = {3},
+pages = {248--256},
+title = {{Transfer learning for cross-company software defect prediction}},
+volume = {54},
+year = {2012}
+}
+@article{Chen2015,
+abstract = {Context: Software defect prediction has been widely studied based on various machine-learning algorithms. Previous studies usually focus on within-company defects prediction (WCDP), but lack of training data in the early stages of software testing limits the efficiency of WCDP in practice. Thus, recent research has largely examined the cross-company defects prediction (CCDP) as an alternative solution. Objective: However, the gap of different distributions between cross-company (CC) data and withincompany (WC) data usually makes it difficult to build a high-quality CCDP model. In this paper, a novel algorithm named Double Transfer Boosting (DTB) is introduced to narrow this gap and improve the performance of CCDP by reducing negative samples in CC data. Method: The proposed DTB model integrates two levels of data transfer: first, the data gravitation method reshapes the whole distribution of CC data to fit WC data. Second, the transfer boosting method employs a small ratio of labeled WC data to eliminate negative instances in CC data. Results: The empirical evaluation was conducted based on 15 publicly available datasets. CCDP experiment results indicated that the proposed model achieved better overall performance than compared CCDP models. DTB was also compared to WCDP in two different situations. Statistical analysis suggested that DTB performed significantly better than WCDP models trained by limited samples and produced comparable results to WCDP with sufficient training data. Conclusions: DTB reforms the distribution of CC data from different levels to improve the performance of CCDP, and experimental results and analysis demonstrate that it could be an effective model for early software defects detection.},
+author = {Chen, Lin and Fang, Bin and Shang, Zhaowei and Tang, Yuanyan},
+doi = {10.1016/j.infsof.2015.01.014},
+issn = {09505849},
+journal = {Information and Software Technology},
+keywords = {Cross-company defects prediction,Software fault prediction,Transfer learning},
+number = {1},
+pages = {67--77},
+title = {{Negative samples reduction in cross-company software defects prediction}},
+volume = {62},
+year = {2015}
+}
+@article{Minku2014,
+abstract = {Previous works using Cross-Company (CC) data for making Within-Company (WC) Software Effort Estimation (SEE) try to use CC data or models directly to provide predic- tions in the WC context. So, these data or models are only helpful when they match the WC context well. When they do not, a fair amount of WC training data, which are usu- ally expensive to acquire, are still necessary to achieve good performance. We investigate how to make best use of CC data, so that we can reduce the amount of WC data while maintaining or improving performance in comparison toWC SEE models. This is done by proposing a new framework to learn the relationship between CC and WC projects ex- plicitly, allowing CC models to be mapped to the WC con- text. Such mapped models can be useful even when the CC models themselves do not match the WC context directly. Our study shows that a new approach instantiating this framework is able not only to use substantially lessWC data than a corresponding WC model, but also to achieve similar/better performance. This approach can also be used to provide insight into the behaviour of a company in comparison to others.},
+author = {Minku, Leandro L and Yao, Xin},
+doi = {10.1145/2568225.2568228},
+isbn = {9781450327565},
+journal = {36th International Conference on Software Engineering (ICSE 2014)},
+keywords = {cross-company learning,ensembles of learning machines,learning,online learning,or hard copies of,part or all of,permission to make digital,software effort estimation,this work for,transfer},
+pages = {446--456},
+title = {{How to Make Best Use of Cross-Company Data in Software Effort Estimation ? Categories and Subject Descriptors}},
+year = {2014}
+}
+@inproceedings{Peters2013,
+abstract = {How can we find data for quality prediction? Early in the life cycle, projects may lack the data needed to build such predictors. Prior work assumed that relevant training data was found nearest to the local project. But is this the best approach? This paper introduces the Peters filter which is based on the following conjecture: When local data is scarce, more information exists in other projects. Accordingly, this filter selects training data via the structure of other projects. To assess the performance of the Peters filter, we compare it with two other approaches for quality prediction. Within-company learning and cross-company learning with the Burak filter (the state-of-the-art relevancy filter). This paper finds that: 1) within-company predictors are weak for small data-sets; 2) the Peters filter+cross-company builds better predictors than both within-company and the Burak filter+cross-company; and 3) the Peters filter builds 64{\%} more useful predictors than both within-company and the Burak filter+cross-company approaches. Hence, we recommend the Peters filter for cross-company learning. {\textcopyright} 2013 IEEE.},
+author = {Peters, Fayola and Menzies, Tim and Marcus, Andrian},
+booktitle = {IEEE International Working Conference on Mining Software Repositories},
+doi = {10.1109/MSR.2013.6624057},
+isbn = {9781467329361},
+issn = {21601852},
+keywords = {Cross company,Data mining,Defect prediction},
+pages = {409--418},
+title = {{Better cross company defect prediction}},
+year = {2013}
+}
+@article{Kocaguneli2015,
+abstract = {When projects lack sufficient local data to make predictions, they try to transfer information from other projects. How can we best support this process? In the field of software engineering, transfer learning has been shown to be effective for defect prediction. This paper checks whether it is possible to build transfer learners for software effort estimation. We use data on 154 projects from 2 sources to investigate transfer learning between different time intervals and 195 projects from 51 sources to provide evidence on the value of transfer learning for traditional cross-company learning problems. We find that the same transfer learning method can be useful for transfer effort estimation results for the cross-company learning problem and the cross-time learning problem. It is misguided to think that: (1) Old data of an organization is irrelevant to current context or (2) data of another organization cannot be used for local solutions. Transfer learning is a promising research direction that transfers relevant cross data between time intervals and domains.},
+author = {Kocaguneli, Ekrem and Menzies, Tim and Mendes, Emilia},
+doi = {10.1007/s10664-014-9300-5},
+issn = {15737616},
+journal = {Empirical Software Engineering},
+keywords = {Data mining,Effort estimation,Transfer learning,k-NN},
+number = {3},
+pages = {813--843},
+title = {{Transfer learning in effort estimation}},
+volume = {20},
+year = {2015}
+}
+@inproceedings{Nam2013,
+abstract = {Many software defect prediction approaches have been proposed and most are effective in within-project prediction settings. However, for new projects or projects with limited training data, it is desirable to learn a prediction model by using sufficient training data from existing source projects and then apply the model to some target projects (cross-project defect prediction). Unfortunately, the performance of cross-project defect prediction is generally poor, largely because of feature distribution differences between the source and target projects. In this paper, we apply a state-of-the-art transfer learning approach, TCA, to make feature distributions in source and target projects similar. In addition, we propose a novel transfer defect learning approach, TCA+, by extending TCA. Our experimental results for eight open-source projects show that TCA+ significantly improves cross-project prediction performance. {\textcopyright} 2013 IEEE.},
+author = {Nam, Jaechang and Pan, Sinno Jialin and Kim, Sunghun},
+booktitle = {Proceedings - International Conference on Software Engineering},
+doi = {10.1109/ICSE.2013.6606584},
+isbn = {9781467330763},
+issn = {02705257},
+keywords = {cross-project defect prediction,empirical software engineering,transfer learning},
+pages = {382--391},
+title = {{Transfer defect learning}},
+year = {2013}
+}
+@inproceedings{Minku2012,
+abstract = {Background: There has been a long debate in the software engineering literature concerning how useful cross-company (CC) data are for software effort estimation (SEE) in comparison to within-company (WC) data. Studies indicate that models trained on CC data obtain either similar or worse performance than models trained solely on WC data. Aims: We aim at investigating if CC data could help to increase performance and under what conditions. Method: The work concentrates on the fact that SEE is a class of online learning tasks which operate in changing environments, even though most work so far has neglected that. We conduct an analysis based on the performance of different approaches considering CC and WC data. These are: (1) an approach not designed for changing environments, (2) approaches designed for changing environments and (3) a new online learning approach able to identify when CC data are helpful or detrimental. Results: Interesting features of data sets commonly used in the SEE literature are revealed, showing that different subsets of CC data can be beneficial or detrimental depending on the moment in time. The newly proposed approach is able to benefit from that, successfully using CC data to improve performance over WC models. Conclusions: This work not only shows that CC data can help to increase performance for SEE tasks, but also demonstrates that the online nature of software prediction tasks should be exploited, being an important issue to be considered in the future.},
+author = {Minku, Leandro L. and Yao, Xin},
+booktitle = {Proceedings of the 8th International Conference on Predictive Models in Software Engineering - PROMISE '12},
+doi = {10.1145/2365324.2365334},
+isbn = {9781450312417},
+keywords = {bles of learning machines,chronological split,concept drift,cross-company estimation mod-,els,ensem-,online learning,software effort estimation},
+pages = {69--78},
+title = {{Can cross-company data improve performance in software effort estimation?}},
+url = {http://dl.acm.org/citation.cfm?doid=2365324.2365334},
+year = {2012}
+}
+@article{Turhan2009,
+abstract = {We propose a practical defect prediction approach for companies that do not track defect related data. Specifically, we investigate the applicability of cross-company (CC) data for building localized defect predictors using static code features. Firstly, we analyze the conditions, where CC data can be used as is. These conditions turn out to be quite few. Then we apply principles of analogy-based learning (i.e. nearest neighbor (NN) filtering) to CC data, in order to fine tune these models for localization. We compare the performance of these models with that of defect predictors learned from within-company (WC) data. As expected, we observe that defect predictors learned from WC data outperform the ones learned from CC data. However, our analyses also yield defect predictors learned from NN-filtered CC data, with performance close to, but still not better than, WC data. Therefore, we perform a final analysis for determining the minimum number of local defect reports in order to learn WC defect predictors. We demonstrate in this paper that the minimum number of data samples required to build effective defect predictors can be quite small and can be collected quickly within a few months. Hence, for companies with no local defect data, we recommend a two-phase approach that allows them to employ the defect prediction process instantaneously. In phase one, companies should use NN-filtered CC data to initiate the defect prediction process and simultaneously start collecting WC (local) data. Once enough WC data is collected (i.e. after a few months), organizations should switch to phase two and use predictors learned from WC data.},
+author = {Turhan, Burak and Menzies, Tim and Bener, Ayşe B. and {Di Stefano}, Justin},
+doi = {10.1007/s10664-008-9103-7},
+isbn = {1382-3256},
+issn = {13823256},
+journal = {Empirical Software Engineering},
+keywords = {Cross-company,Defect prediction,Learning,Metrics (product metrics),Nearest-neighbor filtering,Within-company},
+number = {5},
+pages = {540--578},
+title = {{On the relative value of cross-company and within-company data for defect prediction}},
+volume = {14},
+year = {2009}
+}
+@article{Ma2011,
+abstract = {Traditional machine learning works well within company defect prediction. Unlike these works, we consider the scenario where source and target data are drawn from different companies, recently referred to as cross-company defect prediction. In this paper, we proposed a novel algorithm based on transfer method, called Transfer Naive Bayes (TNB). Our solution transferred the information of test data to the weights of the training data. The theoretical analysis and experiment results indicate that our algorithm is able to get more accurate result within less runtime cost than the state of the art algorithm.},
+author = {Ma, Ying and Luo, Guangchun and Li, Jiong and Chen, Aiguo},
+doi = {10.1109/ICCPS.2011.6092261},
+isbn = {978-1-4577-0601-1},
+journal = {2011 International Conference on Computational Problem-Solving (ICCP)},
+pages = {610--613},
+title = {{Software defect prediction using transfer method}},
+year = {2011}
+}
+
+
 @article{osei04,
   title={Evaluation of decision trees: a multi-criteria approach},
   author={Osei-Bryson, Kweku-Muata},
