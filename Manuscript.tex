@@ -57,7 +57,7 @@
 
 \definecolor{Gray}{rgb}{0.88,1,1}
 \definecolor{Gray}{gray}{0.85}
-\usepackage[svgnames]{xcolor}
+% \usepackage[svgnames]{xcolor}
 \usepackage[framed]{ntheorem}
 \usepackage{framed}
 \usepackage{tikz}
@@ -98,7 +98,7 @@
 \cortext[cor1]{Corresponding author: Tel:+1-919-396-4143(Rahul)}
 \address{\textsuperscript{a}Department of Computer Science, North Carolina State University, Raleigh, NC, USA\\
 \textsuperscript{b}Fraunhofer CESE, College Park, USA}
-\pagestyle{arabic}
+\pagenumbering{arabic}
 
 \begin{abstract} 
 {\bf Context: } 
@@ -151,16 +151,6 @@ performance prediction,  decision trees
 
 \section{Introduction}
 
-\noindent
-%%``Managing people is like herding cats'', says management consultant Watler
-%Bennis~\cite{bennis97}. Nowhere is this more true than when managing programmers. 
-%Programmers can be very intelligent, but very opinionated people whose
-%social position within software organizations relies, in part,
-%of perceived notions of technical excellence. Hence, it can
-%be hard for managers to suggest to programmers that are
-%wrong about how they are prioritizing their development effort.
-
-%Consider, for example, the activity of refactoring code based on bad smells.
 According to   Fowler ~\cite{fowler99}, bad smells (a.k.a. code smells)
 are ``a surface indication that usually corresponds to a deeper problem''.
 Fowler strongly recommends   removing   code smells   by
@@ -215,7 +205,7 @@ is some subset of $C_1 - C_0$). To define ``minimal'', XTREE uses an entropy mea
 
 As to 
 the {\em secondary verification oracle}, this  checks if the primary oracle is proposing
-sensible changes. For this purpose we  use Random Forests\cite{XXX}, augmented with SMOTE (synthetic  minority over-sampling technique~\cite{YYY}).
+sensible changes. For this purpose we use Random Forests\cite{breiman2001random}, augmented with SMOTE (synthetic  minority over-sampling technique~\cite{chawla2002smote}).
  In our framework,  learning
 the secondary oracle is   a {\em separate} task to learning the primary
 oracle. This  ensures that the verification oracle offers an independent
@@ -366,7 +356,7 @@ with those found by researchers exploring bad smells.
 no {\em secondary verification oracle}, i.e. no way to check if XTREE's recommended changes were sensible.
 \ei
 Further, of this entire paper, the only sections containing material
-found in prior papers is 3.2.1, 3.2.2 as well as two-fifths of the results in \fig{xxx}. 
+found in prior papers is 3.2.1, 3.2.2 as well as two-fifths of the results in \fig{jur}. 
 
 
 
