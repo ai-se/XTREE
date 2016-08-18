@@ -87,7 +87,7 @@
 
 \begin{frontmatter}
 
-\title{How to Stop Useless Refactorings}
+\title{How to Discourage Useless Refactorings}
 
 \author{Rahul Krishna\corref{cor1}\textsuperscript{a,}}
 \ead{rkrish11@ncsu.edu}
@@ -102,7 +102,7 @@
 
 \begin{abstract} 
 {\bf Context: } 
-Developers use code bad smells to gudie their refactoring (reorganizing their code).
+Developers use code bad smells to guide their refactoring (reorganizing their code).
 Yet developers, text books, and tools disagree on which bad smells are important.
 %Many bad smell detectors recommend refactoring when static code measure
 %cross some threshold boundary. 
@@ -110,14 +110,14 @@ Yet developers, text books, and tools disagree on which bad smells are important
 %should trigger code improvement or preventative maintenance.  
 
 \noindent 
-{\bf Objective: } We seek to a tool that can recognize  useless refactorings.
+{\bf Objective: } We seek to introduce a tool that can recognize  useless refactorings.
 
 \noindent
 {\bf Method: } We introduce XTREE, a tool which, given a historical log of defects seen previously in the code, generates
 a set of useful code changes.
 Any bad smell that requires changes outside of that set can be deprioritized 
 (since there is no
-historical evidence that that bad smell causes any problems).
+historical evidence that the bad smell causes any problems).
 
 \noindent
 {\bf Evaluation: } We evaluate XTREE's recommendations for bad smell improvement against recommendations from previous work (Shatnawi, Alves, and Borges) using multiple data sets of code metrics and defect counts.  
@@ -182,12 +182,12 @@ Hence, their management goal is:
 \item
 {\em Not} to optimize {\em necessary} refactorings;
 \item
-But rather to stop {\em unnecessary} refactorings.
+But rather to discourage {\em unnecessary} refactorings.
 \ei
 For those managers, we offer the  following heuristic:
 \bi
 \item If there is no evidence in the historical record that changing ``X'' is useful;
-\item Then stop developers from doing ``X''.
+\item Then discourage developers from doing ``X''.
 \ei
 This paper describes one way to operationalize this heuristic, in the context
 of assessing bad smells. We use data mining to generate two oracles: a {\em primary
@@ -197,17 +197,17 @@ By combining these two oracles,
 changes to code modules.
 
 In this paper, we use 
-the XTREE cluster delta algorithm as the {\em primary change  oracle} .
+the XTREE cluster delta algorithm as the {\em primary change  oracle}.
 XTREE 
 explores the historical record of a project to find clusters of projects.
 It then proposes a ``minimal'' set of changes $\Delta$ that can move a software module $M$ from a defective cluster $C_0$ to another with fewer defects$C_1$ (so $\Delta$
-is some subset of $C_1 - C_0$). To define ``minimal'', XTREE uses an entropy measure.
+is some subset of $C_1 - C_0$). % To define ``minimal'', XTREE uses an entropy measure.
 
 As to 
 the {\em secondary verification oracle}, this  checks if the primary oracle is proposing
-sensible changes. For this purpose we use Random Forests\cite{breiman2001random}, augmented with SMOTE (synthetic  minority over-sampling technique~\cite{chawla2002smote}).
+sensible changes. For this purpose we use Random Forest\cite{breiman2001random}, augmented with SMOTE (synthetic  minority over-sampling technique~\cite{chawla2002smote}).
  In our framework,  learning
-the secondary oracle is   a {\em separate} task to learning the primary
+the secondary oracle is   a {\em separate} task from that of learning the primary
 oracle. This  ensures that the verification oracle offers an independent
 opinion on the value of the proposed changes.
 
@@ -239,13 +239,13 @@ that module's coupling metrics.
 
 \subsection{Structure of this Paper}
 
-This paper  claims that (a)~XTREES is a  better way than \eq{fd}  to define useful changes to software and (b)~those changes are useful for recognizing   superfluous refactorings since usually refer to a very 
+This paper  claims that (a)~XTREES is a  better way than \eq{df}  to define useful changes to software and (b)~those changes are useful for recognizing   superfluous refactorings since they usually refer to a very 
 small subset of the static code measures (which allows us to rule out refactorings based on any of the omitted
 static code measures). 
 In support of these claims, 
 the rest of this paper is structured as follows. First, we offer some background on bad smells. After that,
   in Section~3, 
-  different methods for determining when code does/does not have bad smell. One of those methods
+  different methods are presented for determining when code does/does not have bad smell. One of those methods
   will be XTREE while the others will come from other researchers. Next,    Section~4
   defines an assessment method that checks which of these methods is most useful. The results from that assessment 
   are presented in Section~5. Those results will answer five research questions.
@@ -258,17 +258,17 @@ the rest of this paper is structured as follows. First, we offer some background
   \end{lesson}
 
  {\bf RQ2: Succinctness}: Our goal is to critique and, possibly,
-ignore irrelevant bad smell detectors.  If those changes are minimal (i.e. effect fewest attributes) then those changes
+ignore irrelevant bad smell detectors.  If those changes are minimal (i.e. affect fewest attributes) then those changes
 will be easiest to apply and monitor. Hence, we ask, which of the Section~3 methods recommended changes to the fewest
 code attributes?
 \begin{lesson}
 Of all the code change oracles studied here, XTREE recommend  far fewest changes to static code measures.
 \end{lesson}
 
- {\bf RQ3: Stopping}: Our advice to managers is to stop refactoring based on changes that lack
+ {\bf RQ3: Stopping}: Our advice to managers is to discourage refactoring based on changes that lack
 historical evidence of being effective. How effective is XTREE at offering such ``stopping points'' (i.e. clear guidance on what {\em not} to do)??
 \begin{lesson}
-In  any  project,  XTREE’s  recommended  changes  only  mentions one to four 
+In  any  project,  XTREE's  recommended  changes  only  mentions one to four 
 of the  static code attributes.  Any bad smell defined in terms of the remaining 19 to 16 code attributes (i.e. most of them)
 would hence be deprecated.
 \end{lesson}
@@ -300,27 +300,27 @@ Across all studied projects, XTREE found that  around one-fifth
 Consequently, we  recommend the following use case for  XTREE:
 \bi
 \item Before doing  refactoring based on a bad smell report...
-\item ...check and stop any refactoring   for which there is no proof
-  in the historical record that that change improves the code.
+\item ...check and discourage any refactoring   for which there is no proof
+  in the historical record that the change improves the code.
 \ei
 This use case described  applies to both manual refactorings proposed by developers
-as well as refactoring as conducted by automatic methods~\cite{mkaouer2015many}. That is, XTREE could optimize automatic
+as well as refactoring conducted by automatic methods~\cite{mkaouer2015many}. That is, XTREE could optimize automatic
 code refactoring by discouraging refactorings for useless goals.
  
 
 
 \subsection{ Threats to Validity}
  
-The results of this paper care biased by out choice of refactoring goal (reducing defects) and our choice
+The results of this paper are biased by out choice of refactoring goal (reducing defects) and our choice
 of measures collected from software project (OO measures such as
   depth of inheritance, number of child classes, etc).
   
-  That said, it should be possible extend the methods of this paper to  other kinds of other kinds of goals (e.g. maintainability, reliability, security,
+  That said, it should be possible extend the methods of this paper to other kinds of goals (e.g. maintainability, reliability, security,
   or the knowledge sharing measures favoured by Bosu and Carver~\cite{bosu13}) and other kinds of inputs (e.g. the process measures favored by Rahman, Devanbu et al.\cite{Rahman2013})  as follows:
   \bi
   \item Find a data source for the other measures of interest;
   \item Implement another secondary verification oracle that can assess maintainability, reliability, security, etc;
-\item Implement a better primary verification oracle that can do ``better'' that XTREES at finding changes (where ``better'' is defined in terms 
+\item Implement a better primary verification oracle that can do ``better'' that XTREE at finding changes (where ``better'' is defined in terms 
 of the opinions of the verification oracle).
 \ei
 To assist other researchers exploring these points, we offer a full replication package for this study at  https://github.com/ai-se/XTREE\_IST.
@@ -337,15 +337,14 @@ try to repeat our results and, perhaps, point out a previously unknown bias
 in our analysis. Hopefully, other researchers will emulate our methods in
 order to repeat, refute, or improve our results. 
 
-The recommendation to management, shown on page one of this paper,  was to stop developers doing ``X'' if there was
-nothistorical evidence that ``X'' was useful. 
+The recommendation to management, shown on page one of this paper,  was to discourage developers doing ``X'' if there was no historical evidence that ``X'' was useful. 
 This recommendation assumes that such an  historical record can be accessed. If not,  then the results of this paper could be use used as a guide (see our Table 8). Alternatively, some form of transfer learning~\cite{Nam15,Jing15,krishna16} could be used to import data from another project (but more research would be required to test the validity of combing tools like XTREEs with transfer learning). 
   
 
   
   
   \subsection{Relationship to Prior Work }
-A four page prelininary report on the XTREE system~\cite{krishna2015actionable} has been presented previously\footnote{https://goo.gl/2In3Lr}. That short report offered case studies only two  of
+A four page preliminary report on the XTREE system~\cite{krishna2015actionable} has been presented previously\footnote{https://goo.gl/2In3Lr}. That short report offered case studies on only two  of
 the five data sets studied here. Also, that prior work had:
 \bi
 \item
@@ -410,7 +409,7 @@ by the SEI, 2006-2014) possibly since it has been  heavily mitigated by $21^{st}
 Whatever the reason, the main point  is that phase delay is a widely
 held belief, despite little recent evidence to support it.
 \item
-Devanbu et al.  examined responses from 564 Microsoft software developers from around
+Devanbu et al. examined responses from 564 Microsoft software developers from around
 the world, they found that  ``(a)~programmers do indeed have very
 strong beliefs on certain topics; (b)~their beliefs are primarily formed
 based on personal experience, rather than on findings in empirical
@@ -435,8 +434,7 @@ columns show data from other studies on which bad smells matter most.
 The columns marked as Lanza'06 and Yamashita'13 are from peer reviewed literature. The column maked SonarQube is a popular open source
 code assessment tool that includes detectors for six of the bad smells
 in column one. 
-The {\em developer survey}   (in the right-hand-side column),
-  this shows the results of an hour-long whiteboard sessions with a group of 12 developers from a Washington
+The {\em developer survey} (in the right-hand-side column) shows the results of an hour-long whiteboard sessions with a group of 12 developers from a Washington
     D.C. web tools development company. Participants
     worked in a round robin manner to rank the bad smells they thought were
     important (and any disagreements were discussed with the whole group).
@@ -451,7 +449,7 @@ The {\em developer survey}   (in the right-hand-side column),
 
 A  blank cell in \fig{smells}
 indicates where   other work has chosen to ignore
-one the   bad smells in column one. 
+one of the bad smells in column one. 
 Note that most of the cells are blank, and that the studies ignore the majority of the Fowler bad smells.
 SonarQube has no detectors for many of the column one bad smells.
 Also, nearly half the Yamashita list of bad smells
@@ -486,8 +484,7 @@ XTREE, will be our recommended {\em primary change oracle}).
 Later in this paper, we will offer  a {\em secondary verification oracle}
 that checks the effectiveness of the changes proposed by XTREE.
 
-The SE literature offers  two ways to 
-learning bad smell thresholds.
+The SE literature offers two ways of learning bad smell thresholds.
 One approach relies on 
 {\em outlier statistics}~\cite{erni96,bender99}. This approach
 has been used   by Shatnawi~\cite{Shatnawi10}, Alvenes et al.~\cite{Alves2010}
@@ -500,14 +497,16 @@ has been used   by Shatnawi~\cite{Shatnawi10}, Alvenes et al.~\cite{Alves2010}
 
 The outlier approach assume that unusually large measurements indicate risk-prone code.
 Hence, they generate one bad smell threshold for any metric
-with such an ``unusually large'' measurements. 
+with such an ``unusually large'' measurement. 
 The literature lists several ways to define ``unusually large''.
+
+\input{xtree_tut.tex}
 
 \subsection{Outlier Statistics}
 
 \subsubsection{Enri \& Lewerentz}
 Given classes described with the  code metrics of \fig{ck},
-Enri and Lewerentzz~\cite{erni96} found the   mean $\mu$ and the standard deviation $\sigma$
+Enri and Lewerentz~\cite{erni96} found the   mean $\mu$ and the standard deviation $\sigma$
 of each
 code metrics. Their definition of problematic outlier was any code
 metric with a measurement greater than $\mu+\sigma$.
@@ -547,35 +546,6 @@ For consistency
 with Shatnawi, we explore the correlation between
 the code metrics and the defect counts and   reject code metrics that are poor predictors of defects (i.e.   those  with $p > 0.05$).
 
-
-\begin{figure*}[!t]
-~\hrule~
-\begin{minipage}{.53\linewidth}
-\small
- \begin{tabular}{p{0.95\linewidth}} 
- On the right-hand-side is a tree
- generated by iterative dichomization. 
- This tree can be read like a nested if-then-else statement; e.g.
- \begin{itemize}
-     \item Lines 3 and 8 show two branches for lines of code (denoted here as {\em `\$loc}) below 698 and above 698.
-     \item Any line with a colon ":" character shows  a  leaf  of  this  nesting.   For  example,  if  some  new  code module is passed down this tree and falls to the line marked in \textcolor{orange}{{\bf orange}},  the colon on that line indicates a prediction that this module has a 100\% chance of being defective. 
-     \end{itemize}
-Using this tree,
- XTREE looks for a nearby branch that has a lower chance of being defective. Finding the \textcolor{green}{{ green}} desired  branch,  XTREE reports a bad smell threshold for that module that is the delta between the \textcolor{orange}{{\bf orange}}  current branch  and   \textcolor{green}{{ green}} designed branch. 
- In this case, that threshold relates to:
- \begin{itemize}
-     \item Lines of code and comments ({\em lcom}) 
-     \item The cohesion between classes ({\em cam}) which measures similarity of parameter lists to assess the relatedness amongst class   methods.
-     \end{itemize}\\ 
- \end{tabular}
- \end{minipage}~~~~
- \begin{minipage}{.45\linewidth}
-\includegraphics[width=\linewidth]{figs/XTREE_samp.png}
-\end{minipage}
-~\hrule~
- \caption{A brief tutorial on XTREE.} \label{fig:xtree_samp}
-\end{figure*}
-
 \subsubsection{Discussion of Outlier Methods}\label{sect:disc}
 The advantage of the outlier-based
 approaches is that they are simple to implement, but the approaches have   two  major disadvantages. 
@@ -585,8 +555,7 @@ That is, while
  they propose thresholds for many code metrics
 individually, they make no comment on what minimal
 metrics need to be changed at the same time (or whether or not those
-changes need to minimizations or maximations of static code measures).
-
+changes lead to minimization or maximization of static code measures).
 
 
 \subsection{Cluster Deltas}
@@ -611,6 +580,8 @@ from neighboring clusters, the examples contain similar distributions and $\Delt
 given a bad smell pertaining to large methods,   $\Delta$   will not  suggest lowering lines of code
 without also increasing a coupling measure. 
 Cluster deltas are used in CD~\cite{me12c} and XTREE.
+
+
 
 \subsubsection{CD}\label{sec:cdcd}
 Borges and Menzies first proposed the CD centroid delta approach to
@@ -668,7 +639,6 @@ Consider a code metric is split into $r$ ranges and each range is of
   is then split on the ranges of the splitter and
   iterative dichomization recurses on each range.  In this way,
   each split is the root of a sub-tree.
-  
 
  
   While not usually labelled as such, iterative dichomization can
@@ -984,7 +954,7 @@ are  \mbox{3, 3, 3, 4, 1, 2} respectively (out of twenty). This means that, usua
 code attributes (out of 20). 
 Any refactoring based on a bad smell detector that uses  these omitted code attributes could hence  be stopped.
 
-Hence our {\bf Result3} is that, in a any  project,  XTREE’s  recommended  changes  only  mentions one to four 
+Hence our {\bf Result3} is that, in a any  project,  XTREE's  recommended  changes  only  mentions one to four 
 of the  static code attributes.  Any bad smell defined in terms of the remaining 19 to 16 code attributes (i.e. most of them)
 would hence be deprecated.
 
@@ -1044,7 +1014,7 @@ always reduce lines of code (loc). But for the other attributes, there are many 
 Hence, {\bf Result5} is that while XTREE always  recommends reducing loc,
 it also   often recommends increasing the values of other static code attributes.   
 
-% of ``better'' deefined as per \eq{fd} is misleading.
+% of ``better'' deefined as per \eq{df} is misleading.
 
 % Also, most attributes are not changed in most data sets.
 % Only our attributes (cbo, rfc, loc,cam) change in a majority of data sets  (three of five, or more). 
@@ -1225,7 +1195,7 @@ it also   often recommends increasing the values of other static code attributes
 % % optimistic reasoning when generating the changed code modules.
 % We assumed in \tion{rq}
 % that any code module can be changed in order
-% to stop triggering a bad smell detector. This is not necessarily
+% to discourage triggering a bad smell detector. This is not necessarily
 % true, as noted in {\em PROBLEM \#2} in this paper's introduction.
 % To mitigate this issue:
 % \begin{itemize}
@@ -1291,7 +1261,7 @@ it also   often recommends increasing the values of other static code attributes
 
 
 \section{Conclusions}
-How to stop useless refactorings?
+How to discourage useless refactorings?
 We say: ignore those not supported by the historical log of data from
 the current project.  
 When that data is not available (e.g. early
