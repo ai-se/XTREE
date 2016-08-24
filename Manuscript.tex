@@ -1007,250 +1007,85 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		Hence, {\bf Result5} is that while XTREE always  recommends reducing loc,
 		it also   often recommends increasing the values of other static code attributes.   
 		
-		% of ``better'' deefined as per \eq{df} is misleading.
+
+		\section{Threats to Validity}\label{sect:valid}
+
+The results of this paper are biased by out choice of refactoring goal (reducing defects) and our choice
+of measures collected from software project (OO measures such as
+  depth of inheritance, number of child classes, etc).
+  
+  That said, it should be possible extend the methods of this paper to other kinds of goals (e.g. maintainability, reliability, security,
+  or the knowledge sharing measures favoured by Bosu and Carver~\cite{bosu13}) and other kinds of inputs (e.g. the process measures favored by Rahman, Devanbu et al.\cite{Rahman2013})  as follows:
+  \bi
+  \item Find a data source for the other measures of interest;
+  \item Implement another secondary verification oracle that can assess maintainability, reliability, security, etc;
+\item Implement a better primary verification oracle that can do ``better'' that XTREE at finding changes (where ``better'' is defined in terms 
+of the opinions of the verification oracle).
+\ei
+To assist other researchers exploring these points, we offer a full replication package for this study at  https://github.com/ai-se/XTREE\_IST.
+
+The results of this paper are also specific to the data sets explored here.
+Such sampling bias threatens any data mining experiment; i.e., what matters
+{\em there} may not be true {\em here}. For example, the data sets used here comes from a survey of
+open source JAVA projects from Jureczko et al.~\cite{jureczko10}. Any biases in their selection procedures
+threaten the validity of these results. 
+
+That said,
+the best we can do is define our methods and publicize our data and code so that other researchers can
+try to repeat our results and, perhaps, point out a previously unknown bias
+in our analysis. Hopefully, other researchers will emulate our methods in
+order to repeat, refute, or improve our results. 
+
+The recommendation to management, shown on page one of this paper,  was to stop developers doing ``X'' if there was no historical evidence that ``X'' was useful. 
+This recommendation assumes that such an  historical record can be accessed. If not,  then the results of this paper could be use used as a guide (see our Table 8). Alternatively, some form of transfer learning~\cite{Nam15,Jing15,krishna16} could be used to import data from another project (but more research would be required to test the validity of combing tools like XTREEs with transfer learning). 
+
+
+		As with any empirical study, several issues can affect the final results. Therefore, any
+		conclusions made from this work must be offered with the following
+		caveats.
 		
-		% Also, most attributes are not changed in most data sets.
-		% Only our attributes (cbo, rfc, loc,cam) change in a majority of data sets  (three of five, or more). 
-		
-		
-		% XXXX
-		
-		% ups and down. fucntionalty has to go somehwere else
-		
-		
-		% highlights all possible changes proposed by XTREE, upon close inspection it becomes apparent that XTREE suggests that it is perhaps better to reduce only certain forms of coupling. Refactoring operations that reduce one form of coupling at the cost of increasing another can sometimes be beneficial. This is most noticeable in Ivy, where one of the better approaches is to reduce coupling between objects (cbo) (efferent coupling) while increasing the afferent coupling (CA), again implying a redistribution of responsibilities. Using thresholds may not always appreciate the existence of these co-changes between metrics, and as a result many refactoring operations are usually left unexplored.
-		
-		% Note that we prefer XTREE to Shatnawi and the Alves
-		% method since those other methods
-		% do not reason
-		% 2about decreases {\em and} increases of multiple 
-		% code metrics, at the same time.
-		
-		% As a final comment, we note
-		% that  \fig{changes} enables us to explain the uniformity
-		% of the results seen with Jedit in \fig{jur}.
-		% Observe how in \fig{changes} the only change ever
-		% found is a reduction to {\em rfc}. Clearly, in this
-		% data set, there is very little that can be usefully changed.
-		
-		
-		% \fig{multcomp} shows the frequency with which the methods
-		% recommend changes to specific code methods.
-		% Note that XTREE proposes thresholds to
-		% few code metrics compared to the other approaches. 
-		
-		% When combining  \fig{jur}, \fig{counts}, and \fig{multcomp}, we   see that
-		% even though XTREE proposes changes to far fewer code metrics, those few
-		% code metrics are usually just as effective (or
-		% more effective) than the multiple
-		% thresholds
-		% proposed by CD, Shatnawi or Alves.  That is, XTREE proposes
-		% {\em fewer} and better thresholds than the other approaches studied here.
-		
-		% \begin{lesson}
-		% In addition to recommending useful changes, XTREE recommends changes to all co-varying software metrics.
-		% \end{lesson}
-		
-		
-		% \section{Threats to Validity}\label{sect:valid}
-		% XXXX assumes anything can change
-		
-		% assumes we can get data
-		
-		% assuems that defect is a;l;l.
+		\subsection{External Validity}
+		Based on the experimental results above,
+		as well as the discussion in \tion{prelim},
+		we believe that bad smell indicators (e.g. \mbox{{\em loc}$>$ 100})
+		have limited external validity beyond the projects from which they are derived. 
+		While specific models are externally valid,
+		there may still be general methods like XTREE for finding the good local models.  
 		
 		
-		
-		% Before  that, we offer one following note on a
-		% core assumption of XTREE.
-		% XTREE   is focused on Fowler's bad smells
-		% as contributors to software defects. Some researchers 
-		%  suggest that discussing bad smells is useful for more just reducing defects. For example, Bosu and Carver~\cite{bosu13} report that
-		% debates about code smells and refactorings can (a)~introduce new comers to the code base or (b)~share knowledge on a team
-		% about interactions within the code. In that view, 
-		% the concept of refactoring can be useful
-		% even if it does not address issues of defects. 
+		Our definition of bad smells is limited to those represented by OO code metrics (a premise often used in related work).   
+		XTREE, Shatnawi, Alves et al. can  only comment
+		on bad smells   expressed as code metrics 
+		  in the historical log of a project. 
 		
 		
-		% As with any empirical study, several issues can affect the final results. Therefore, any
-		% conclusions made from this work must be offered with the following
-		% caveats.
+		If developers want to justify their refactorings
+		via bad smells expressed in other terminology,
+		then the  analysis of this paper must:
+		\begin{itemize}
+		    \item Either wait till 
+		data about those new
+		terms has been collected. 
+		\item Or, apply cutting edge transfer learning
+		methods~\cite{Nam15,Jing15} to map data from other projects
+		into the current one.
+		\end{itemize}
+		Note that the transfer learning approach would
+		be highly experimental and require more study
+		before it can be safely recommended.
 		
-		% \subsection{External Validity}
-		% Based on the experimental results above,
-		% as well as the discussion in \tion{prelim},
-		% we believe that bad smell indicators (e.g. \mbox{{\em loc}$>$ 100})
-		% have limited external validity beyond the projects from which they are derived. 
-		% While specific models are externally valid,
-		% there may still be general methods like XTREE for finding the good local models.  
+		Sampling bias threatens any data mining experiment; i.e., what matters
+		there may not be true here. For example, the data sets used here comes from Jureczko et al. and any biases in their selection procedures
+		threaten the validity of these results. 
+		That said,
+		the best we can do is define our methods and publicize our data and code so that other researchers can
+		try to repeat our results and, perhaps, point out a previously unknown bias
+		in our analysis. Hopefully, other researchers will emulate our methods in
+		order to repeat, refute, or improve our results. 
 		
-		
-		% Our definition of bad smells is limited to those represented by OO code metrics (a premise often used in related work).   
-		% XTREE, Shatnawi, Alves et al. can  only comment
-		% on bad smells   expressed as code metrics 
-		%   in the historical log of a project. 
-		
-		
-		% If developers want to justify their refactorings
-		% via bad smells expressed in other terminology,
-		% then the  analysis of this paper must:
-		% \begin{itemize}
-		%     \item Either wait till 
-		% data about those new
-		% terms has been collected. 
-		% \item Or, apply cutting edge transfer learning
-		% methods~\cite{Nam15,Jing15} to map data from other projects
-		% into the current one.
-		% \end{itemize}
-		% Note that the transfer learning approach would
-		% be highly experimental and require more study
-		% before it can be safely recommended.
-		
-		% Sampling bias threatens any data mining experiment; i.e., what matters
-		% there may not be true here. For example, the data sets used here comes from Jureczko et al. and any biases in their selection procedures
-		% threaten the validity of these results. 
-		% That said,
-		% the best we can do is define our methods and publicize our data and code so that other researchers can
-		% try to repeat our results and, perhaps, point out a previously unknown bias
-		% in our analysis. Hopefully, other researchers will emulate our methods in
-		% order to repeat, refute, or improve our results. 
-		
-		% % Data mining is a large and active field and any single study can only use a small subset of the known classification algorithms.  
-		% % That said, we have taken care to document in this paper the decisions made by engineering
-		% % judgement that could effect our conclusions.
-		
-		
-		
-		
-		
-		
-		
-		% \subsection{Trusting the Changes}\label{sect:trust}
-		%   XTREE is evaluated by  comparing
-		% predicted performance scores before and after a planner makes changes to the feature values of an example:
-		% After making those
-		% changes, we may have a new example that has never been seen before. Therefore, it must be asked
-		% {\em ``can we trust the predictions made on such new examples?''}
-		
-		% To answer this question, we note
-		% that data miners explore two  ``clouds'' of data: (1) the cloud of training examples and (2) the  cloud   of test examples
-		% (for a visualization of these clouds, see \fig{howxy}).
-		% \begin{figure}[!t]
-		%   \includegraphics[width=\linewidth]{figs/2d.eps} 
-		%  % \includegraphics[width=1\linewidth]{figs/BDBC.eps}
-		% \caption{Gray, red, green show (1) training examples, (2) test examples and 
-		%   (3) tests that have been altered by planners.
-		%   This figure uses axes generated from the first two components of a PCA analysis of all points. 
-		% }\label{fig:howxy}
-		% \end{figure}
-		% We should mistrust the predictions made by a  model   if it is being applied to examples  that are
-		% too far away from the
-		% training cloud.
-		% To test for ``too far'', we can run a data mining experiment that tests how well
-		% a model learned from the training data applies to the test data. Such experiments return some performance value.
-		
-		% Note that predictions  about changes that  fall within the space of the training+test data, will be at least
-		% as accurate as the predictions of the original test data. With this, we assert that the predictions for changes that move examples towards/away from the training data can be trusted more/less (respectively).
-		
-		% Accordingly, we need {\em trust-increasing} planners to generate new examples {\em closer} to the
-		% training examples.  To see how this works, 
-		%  \fig{howxy} is from the {\em ivy} data
-		% set (one of the Jureczko data sets used in this paper). It shows: (1)~the training examples in gray, (2)~the test examples in red, and (3)~the
-		% changed  examples displaced after applying a plan (in green).
-		%  Note that the  the   changed examples
-		% cases  (shown in green)  fall closer to the training cases (shown in gray) than
-		% the test cases (shown in red). 
-		
-		% In that green region of changed examples, our belief in the value of predictions
-		% will be just as much as, if not more than, our belief in the value of the predictions in the red region (that
-		% contains the original test data).
-		% This pattern of \fig{howxy} (where the new examples are found closer to  the training cases than the test cases) has been observed in all the other data sets studied in this
-		% paper. Hence,  we can assert that
-		% predictors learned from these training examples have some authority in the regions
-		% containing the changes examples.
-		
-		
-		% That said, the above comes with some important caveats:
-		% \bi
-		% \item 
-		% The quality of the prediction depends on the nature of the training data. Thus, we strongly recommend that both the data set and the predictor be assessed prior to planning. This ensures that the predictor's performance is adequate for a data set. We tackle this issue in detail in \tion{tesd}.
-		% \item
-		% Planners should be designed to be {\em trust increasing}. We list four such planning methods in \tion{planners}.
-		% \item
-		% Where possible, planners should be assessed via some external
-		% oracle that can accurately assess new examples. For an example of that kind of analysis,
-		% see  \tion{coc}.
-		% \ei
-		
-		% \subsection{  Internal Validity}\label{sect:coc}
-		
-		% % The main internal validity threat   in this study was the use of
-		% % optimistic reasoning when generating the changed code modules.
-		% We assumed in \tion{rq}
-		% that any code module can be changed in order
-		% to discourage triggering a bad smell detector. This is not necessarily
-		% true, as noted in {\em PROBLEM \#2} in this paper's introduction.
-		% To mitigate this issue:
-		% \begin{itemize}
-		%     \item We do not propose using XTREE as a bad
-		% smell generator;
-		% \item Rather, we offer it as  a critique agent for bad smells
-		% proposed by some other oracle (e.g. a human developer).
-		% \end{itemize}
-		% We showed about that XTREE's recommendations are not verbose.
-		% That is, even if XTREE recommends the superset of possibly important bad smells,
-		% that superset is not so large as to  overlap with many
-		%  bad smell proposed at random 
-		% by   developers. 
-		
-		% XTREE does not require a working defect predictor to generate
-		% its bad smell thresholds. However, to {\em certify}
-		% that those thresholds are satisfactory, some
-		% second quality predictor must be applied. A data set containing defect counts before and after refactoring activities would enable an accurate assessment of the performance of the threshold-setting and recommender methods, however, such a data set is not available at this time.
-		
-		%  Historically,
-		% SE researchers~\cite{Cheng10,OKeeffe08,OKeeffe07,Moghadam2011,Mkaouer14} have used the QMOOD hierarchical quality model~\cite{Bansiya02}.
-		% Since such quality models may be very project specific~\cite{localvsglobal}, we prefer building local 
-		% defect predictors using Random Forests. We chose this approach,  based on its reputation for having the better  performance of 21 other learners for defect prediction~\cite{lessmann}.  
-		% Our results show that when a defect log contains too few
-		% non-defective examples then defector predictors
-		% perform poorly (see the data sets in the last few lines of \fig{j})
-		% as do their associated bad smell threshold generators
-		% (recall the performance of Lucene and Poi in~\fig{jur}). It should be noted that this is not a limitation of XTREE-- rather
-		% it seems fundamental to the problem of certifying bad smells.
-		% As evidence of this, recall that {\em all} the bad smell threshold generators of~\fig{jur}
-		% had issues with the defect data sets with  many defects
-		% (Lucene and Poi).
-		
-		
-		% % \subsection{ Learner Bias}
-		% % This study used two kinds of learners: (1) methods for suggesting
-		% % changes to code like Shatnawi, Alves et al., CD and XTREE;
-		% % (2) methods for assessing the changes proposed by these learners.
-		% % Prior studies implemented (2) using  the QMOOD hierarchical quality model
-		% % which is so old, that we suspect it may no longer be current. Hence,
-		% % we used Random Forests to build the assessment oracles that were specific
-		% % to the data sets used in this study. We chose this approach,  based on its reputation for having the better  performance of 21 other learners for defect prediction~\cite{lessmann}. 
-		
-		
-		
-		
-		
-		% % \subsection{  Sampling bias} 
-		% % Sampling bias threatens any data mining experiment; i.e., what matters
-		% % there may not be true here. For example, the data sets used here comes from two  Jureczko et al. and any biases in their selection procedures
-		% % threaten the validity of these results. 
-		% % That said,
-		% % the best we can do is define our methods and publicize our data and code so that other researchers can
-		% % try to repeat our results and, perhaps, point out a previously unknown bias
-		% % in our analysis. Hopefully, other researchers will emulate our methods in
-		% % order to repeat, refute, or improve our results. 
-		
-		
-		
-		
-		
-		% \input{results_models.tex}
+		% Data mining is a large and active field and any single study can only use a small subset of the known classification algorithms.  
+		% That said, we have taken care to document in this paper the decisions made by engineering
+		% judgement that could effect our conclusions.
 		
 		
 		\section{Conclusions}
