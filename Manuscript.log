@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 AUG 2016 11:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 AUG 2016 16:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,36 +895,35 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 Package mathptmx Warning: There are no bold math fonts on input line 150.
 
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 192.
+
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 192.
- [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-] [2]
+ [2]
 Underfull \hbox (badness 1320) in paragraph at lines 300--301
 \OT1/ptm/m/n/10 Consequently, we rec-om-mend the fol-low-ing use case for
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 351--355
+Underfull \hbox (badness 1270) in paragraph at lines 317--321
 []\OT1/ptm/m/n/10 no com-par-i-son to any base-line method from other re-
  []
 
-[3] (./refactor.tex) (./jur_char.tex)
-Underfull \vbox (badness 1424) has occurred while \output is active []
-
- [4]
-(./xtree_tut.tex
+[3] (./refactor.tex) (./jur_char.tex) [4] (./xtree_tut.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
- <figs/XTREE_samp.png, id=51, 371.4678pt x 292.4526pt>
+
+<figs/XTREE_samp.png, id=51, 371.4678pt x 292.4526pt>
 File: figs/XTREE_samp.png Graphic file (type png)
 
 <use figs/XTREE_samp.png>
@@ -950,15 +949,15 @@ Overfull \hbox (8.78491pt too wide) in paragraph at lines 26--47
 [][] 
  []
 
-) [7] [8]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 786.
+) [7]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 751.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 786.
-
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 751.
+ [8]
 (./results_jur.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--16
 
@@ -984,44 +983,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--67
 
  []
 
-) [9] (./rq2.tex
+) (./rq2.tex
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
 
 
-LaTeX Warning: Reference `sect:p' on page 10 undefined on input line 46.
+LaTeX Warning: Reference `sect:p' on page 9 undefined on input line 46.
 
 
-LaTeX Warning: Reference `sect:p' on page 10 undefined on input line 46.
+LaTeX Warning: Reference `sect:p' on page 9 undefined on input line 46.
 
-) <figs/changes01.png, id=74, 2348.2932pt x 895.6662pt>
+) <figs/changes01.png, id=70, 2348.2932pt x 895.6662pt>
 File: figs/changes01.png Graphic file (type png)
 
 <use figs/changes01.png>
-Package pdftex.def Info: figs/changes01.png used on input line 862.
+Package pdftex.def Info: figs/changes01.png used on input line 827.
 (pdftex.def)             Requested size: 522.0pt x 199.09718pt.
 
 
-LaTeX Warning: Reference `sect:inc' on page 10 undefined on input line 895.
+LaTeX Warning: Reference `sect:inc' on page 9 undefined on input line 860.
 
-(./all_changes.tex) [10] [11 <./figs/changes01.png>]
-Underfull \hbox (badness 1152) in paragraph at lines 1273--1275
+[9] (./all_changes.tex) [10 <./figs/changes01.png>]
+Underfull \hbox (badness 2781) in paragraph at lines 998--1003
+[]\OT1/ptm/m/n/10 External re-li-a-bil-ity as-sesses how well in-de-pen-dent re
+-
+ []
+
+[11]
+Underfull \hbox (badness 1152) in paragraph at lines 1098--1100
 []\OT1/ptm/m/n/10 XTREE im-proves on prior meth-ods for gen-er-at-ing bad
  []
 
-(./Manuscript.bbl
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[12]
+[12] (./Manuscript.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 175.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \vbox (3.18604pt too high) has occurred while \output is active []
 
 
-Underfull \hbox (badness 2790) in paragraph at lines 275--279
+[13]
+Underfull \hbox (badness 2790) in paragraph at lines 246--250
 []\OT1/ptm/m/n/8 T. Men-zies, J. Green-wald, and A. Frank.  Data min-ing static
 
  []
@@ -1030,20 +1031,16 @@ Underfull \hbox (badness 2790) in paragraph at lines 275--279
 \tf@thm=\write6
 \openout6 = `Manuscript.thm'.
 
-
-Overfull \vbox (0.79195pt too high) has occurred while \output is active []
-
-
-[13] (./Manuscript.aux)
+ [14] (./Manuscript.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16032 strings out of 493014
- 301938 string characters out of 6133351
- 414902 words of memory out of 5000000
- 19094 multiletter control sequences out of 15000+600000
+ 16036 strings out of 493014
+ 302007 string characters out of 6133351
+ 411336 words of memory out of 5000000
+ 19098 multiletter control sequences out of 15000+600000
  63944 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,21n,78p,1692b,750s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1061,10 +1058,10 @@ t/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/tim
 es/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Manuscript.pdf (13 pages, 787960 bytes).
+Output written on Manuscript.pdf (14 pages, 790724 bytes).
 PDF statistics:
- 135 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

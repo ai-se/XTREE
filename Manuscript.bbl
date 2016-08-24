@@ -5,6 +5,10 @@ M.~Fowler, K.~Beck, J.~Brant, W.~Opdyke, and D~Roberts.
 \newblock {\em Refactoring: Improving the Design of Existing Code}.
 \newblock Addison-Wesley Longman, Boston, MA, USA, 1999.
 
+\bibitem{marinescu06}
+Radu Marinescu and Michelle Lanza.
+\newblock Object-oriented metrics in practice, 2006.
+
 \bibitem{kim2012field}
 Miryung Kim, Thomas Zimmermann, and Nachiappan Nagappan.
 \newblock A field study of refactoring challenges and benefits.
@@ -57,46 +61,6 @@ Wiem Mkaouer, Marouane Kessentini, Adnan Shaout, Patrice Koligheu, Slim
 \newblock Many-objective software remodularization using nsga-iii.
 \newblock {\em ACM Transactions on Software Engineering and Methodology
   (TOSEM)}, 24(3):17, 2015.
-
-\bibitem{bosu13}
-A.~Bosu and J.~C. Carver.
-\newblock Impact of peer code review on peer impression formation: A survey.
-\newblock In {\em Empirical Software Engineering and Measurement, 2013 ACM /
-  IEEE International Symposium on}, pages 133--142, Oct 2013.
-
-\bibitem{Rahman2013}
-Foyzur Rahman and Premkumar Devanbu.
-\newblock {How, and why, process metrics are better}.
-\newblock In {\em Proceedings - International Conference on Software
-  Engineering}, pages 432--441, 2013.
-
-\bibitem{jureczko10}
-Marian Jureczko and Lech Madeyski.
-\newblock {Towards identifying software project clusters with regard to defect
-  prediction}.
-\newblock In {\em Proceedings of the 6th International Conference on Predictive
-  Models in Software Engineering}, PROMISE '10, pages 9:1----9:10. ACM, 2010.
-
-\bibitem{Nam15}
-Jaechang Nam and Sunghun Kim.
-\newblock Heterogeneous defect prediction.
-\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
-  Software Engineering}, ESEC/FSE 2015, pages 508--519, New York, NY, USA,
-  2015. ACM.
-
-\bibitem{Jing15}
-Xiaoyuan Jing, Fei Wu, Xiwei Dong, Fumin Qi, and Baowen Xu.
-\newblock Heterogeneous cross-company defect prediction by unified metric
-  representation and cca-based transfer learning.
-\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
-  Software Engineering}, ESEC/FSE 2015, pages 496--507, New York, NY, USA,
-  2015. ACM.
-
-\bibitem{krishna16}
-L.~Layman R.~Krishna, T.Menzies.
-\newblock "too much automation? the bellwether effect and its implications for
-  transfer learning.
-\newblock In {\em ASE'16}, 2016.
 
 \bibitem{krishna2015actionable}
 Rahul Krishna and Tim Menzies.
@@ -216,6 +180,13 @@ Usama~M. Fayyad and Keki~B. Irani.
   classification learning.
 \newblock In {\em Thirteenth International Joint Conference on Articial
   Intelligence}, volume~2, pages 1022--1027. Morgan Kaufmann Publishers, 1993.
+
+\bibitem{jureczko10}
+Marian Jureczko and Lech Madeyski.
+\newblock {Towards identifying software project clusters with regard to defect
+  prediction}.
+\newblock In {\em Proceedings of the 6th International Conference on Predictive
+  Models in Software Engineering}, PROMISE '10, pages 9:1----9:10. ACM, 2010.
 
 \bibitem{Cheng10}
 Betty Cheng and Adam Jensen.
@@ -341,5 +312,38 @@ Tim Menzies, Andrew Butcher, Andrian Marcus, Thomas Zimmermann, and David Cok.
   prediction}.
 \newblock In {\em 2011 26th IEEE/ACM International Conference on Automated
   Software Engineering (ASE 2011)}, pages 343--351. IEEE, nov 2011.
+
+\bibitem{bosu13}
+A.~Bosu and J.~C. Carver.
+\newblock Impact of peer code review on peer impression formation: A survey.
+\newblock In {\em Empirical Software Engineering and Measurement, 2013 ACM /
+  IEEE International Symposium on}, pages 133--142, Oct 2013.
+
+\bibitem{Rahman2013}
+Foyzur Rahman and Premkumar Devanbu.
+\newblock {How, and why, process metrics are better}.
+\newblock In {\em Proceedings - International Conference on Software
+  Engineering}, pages 432--441, 2013.
+
+\bibitem{Nam15}
+Jaechang Nam and Sunghun Kim.
+\newblock Heterogeneous defect prediction.
+\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2015, pages 508--519, New York, NY, USA,
+  2015. ACM.
+
+\bibitem{Jing15}
+Xiaoyuan Jing, Fei Wu, Xiwei Dong, Fumin Qi, and Baowen Xu.
+\newblock Heterogeneous cross-company defect prediction by unified metric
+  representation and cca-based transfer learning.
+\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2015, pages 496--507, New York, NY, USA,
+  2015. ACM.
+
+\bibitem{krishna16}
+L.~Layman R.~Krishna, T.Menzies.
+\newblock "too much automation? the bellwether effect and its implications for
+  transfer learning.
+\newblock In {\em ASE'16}, 2016.
 
 \end{thebibliography}

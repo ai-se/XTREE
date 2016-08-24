@@ -196,7 +196,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		change oracle} and a {\em secondary verification oracle}.
 	By combining these two oracles,
 	we can generate and validate useful
-	changes to code modules. We focus on ``bad smells'' indicated by code metrics such as size and complexity as captured in popular tools such as SonarQube and Klocwerk [REF].
+	changes to code modules. We focus on ``bad smells'' indicated by code metrics such as size and complexity as captured in popular tools such as SonarQube and Klockwork\footnote{http://www.klocwork.com/}.
 	
 	In this paper, we use 
 	the XTREE cluster delta algorithm as the {\em primary change  oracle}.
@@ -509,9 +509,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	The normalized metric values are ordered in an ascending fashion (this is equivalent to computing a density function, in which the x-axis represents the weight ratio (0-100\%), and the y-axis the metric scale).
 	Alves et al. then select a percentage value (they suggest 90\%) which represents the ``normal'' values for metrics. The metric threshold, then, is the metric value for which 90\% of the classes fall below. The intuition  is that the worst code has outliers beyond 90\% of the normal code measurements. Hermans et al.~\cite{hermans15} used the
 	Alves et al. method in their  2015 paper on
-	exploring bad smells.
-	
-	For consistency with Shatnawi, we explore the correlation between the code metrics and the defect counts and  reject code metrics that are poor predictors of defects (i.e.   those  with $p > 0.05$).
+	exploring bad smells. For consistency with Shatnawi, we explore the correlation between the code metrics and the defect counts and  reject code metrics that are poor predictors of defects (i.e.   those  with $p > 0.05$).
 	
 	\subsubsection{Discussion of Outlier Methods}\label{sect:disc}
 	The advantage of the outlier-based
@@ -975,22 +973,52 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		it also   often recommends increasing the values of other static code attributes.   
 		
 
-		\section{Threats to Validity}\label{sect:valid}
+\section{Reliability and Validity of Conclusions}
+\label{sect:valid}
 
-The results of this paper are biased by our choice of code reorganization goal (reducing defects) and our choice
-of measures collected from software project (OO measures such as
-  depth of inheritance, number of child classes, etc).
-  
-  That said, it should be possible extend the methods of this paper to other kinds of goals (e.g. maintainability, reliability, security,
-  or the knowledge sharing measures favoured by Bosu and Carver~\cite{bosu13}) and other kinds of inputs (e.g. the process measures favored by Rahman, Devanbu et al.\cite{Rahman2013})  as follows:
-  \bi
-  \item Find a data source for the other measures of interest;
-  \item Implement another secondary verification oracle that can assess maintainability, reliability, security, etc;
-\item Implement a better primary verification oracle that can do ``better'' that XTREE at finding changes (where ``better'' is defined in terms 
+The results of this paper are biased by our choice of code reorganization 
+goal (reducing defects) and our choice of measures collected from software 
+project (OO measures such as depth of inheritance, number of child classes, 
+etc). That said, it should be possible extend the methods of this paper to other 
+kinds of goals (e.g. maintainability, reliability, security, or the knowledge sharing
+measures favoured by Bosu and Carver~\cite{bosu13}) and other kinds of 
+inputs (e.g. the process measures favored by Rahman, 
+Devanbu et al.~\cite{Rahman2013}) 
+
+\subsection{Reliability}
+Reliability refers to the consistency of the results obtained
+from the research. It has at least two components: internal
+and external reliability.
+
+Internal reliability checks if an independent researcher
+reanalyzing the data would come to the same conclusion. 
+To assist other researchers exploring this point, we offer a full replication package for this study at  
+https://github.com/ai-se/XTREE\_IST.
+
+External reliability assesses how well independent researchers
+could reproduce the study. To increase external
+reliability, this paper has taken care to clearly define our
+algorithms. Also, all the data used in this work is available
+online. 
+
+For the research wishing to reproduce our work to other kinds of goals, we offer the following advice:
+
+\bi
+\item Find a data source for the other measures of interest;
+\item Implement another secondary verification oracle that can assess maintainability, reliability, security, etc;
+\item Implement a better primary verification oracle that can do ``better'' than XTREE at finding changes (where ``better'' is defined in terms 
 of the opinions of the verification oracle).
 \ei
-To assist other researchers exploring these points, we offer a full replication package for this study at  https://github.com/ai-se/XTREE\_IST.
 
+
+\subsection{Validity}
+
+Validity refers to the extent to which a piece of research actually
+investigates what the researcher purports to investigate.
+Validity has at least three components: internal and
+external validity.
+
+\subsection{Internal Validity}
 The results of this paper are also specific to the data sets explored here.
 Such sampling bias threatens any data mining experiment; i.e., what matters
 {\em there} may not be true {\em here}. For example, the data sets used here comes from a survey of
@@ -1006,54 +1034,49 @@ order to repeat, refute, or improve our results.
 The recommendation to management, shown on page one of this paper,  was to stop developers doing ``X'' if there was no historical evidence that ``X'' was useful. 
 This recommendation assumes that such an  historical record can be accessed. If not,  then the results of this paper could be use used as a guide (see our Table 8). Alternatively, some form of transfer learning~\cite{Nam15,Jing15,krishna16} could be used to import data from another project (but more research would be required to test the validity of combing tools like XTREEs with transfer learning). 
 
+As with any empirical study, several issues can affect the final results. Therefore, any
+conclusions made from this work must be offered with the following
+caveats.
+		
+\subsection{External Validity}
+Based on the experimental results above,
+as well as the discussion in \tion{prelim},
+we believe that bad smell indicators (e.g. \mbox{{\em loc}$>$ 100})
+have limited external validity beyond the projects from which they are derived. 
+While specific models are externally valid,
+there may still be general methods like XTREE for finding the good local models.  
 
-		As with any empirical study, several issues can affect the final results. Therefore, any
-		conclusions made from this work must be offered with the following
-		caveats.
-		
-		\subsection{External Validity}
-		Based on the experimental results above,
-		as well as the discussion in \tion{prelim},
-		we believe that bad smell indicators (e.g. \mbox{{\em loc}$>$ 100})
-		have limited external validity beyond the projects from which they are derived. 
-		While specific models are externally valid,
-		there may still be general methods like XTREE for finding the good local models.  
-		
-		
-		Our definition of bad smells is limited to those represented by OO code metrics (a premise often used in related work).   
-		XTREE, Shatnawi, Alves et al. can  only comment
-		on bad smells   expressed as code metrics 
-		  in the historical log of a project. 
-		
-		
-		If developers want to justify their refactorings
-		via bad smells expressed in other terminology,
-		then the  analysis of this paper must:
-		\begin{itemize}
-		    \item Either wait till 
-		data about those new
-		terms has been collected. 
-		\item Or, apply cutting edge transfer learning
-		methods~\cite{Nam15,Jing15} to map data from other projects
-		into the current one.
-		\end{itemize}
-		Note that the transfer learning approach would
-		be highly experimental and require more study
-		before it can be safely recommended.
-		
-		Sampling bias threatens any data mining experiment; i.e., what matters
-		there may not be true here. For example, the data sets used here comes from Jureczko et al. and any biases in their selection procedures
-		threaten the validity of these results. 
-		That said,
-		the best we can do is define our methods and publicize our data and code so that other researchers can
-		try to repeat our results and, perhaps, point out a previously unknown bias
-		in our analysis. Hopefully, other researchers will emulate our methods in
-		order to repeat, refute, or improve our results. 
-		
-		% Data mining is a large and active field and any single study can only use a small subset of the known classification algorithms.  
-		% That said, we have taken care to document in this paper the decisions made by engineering
-		% judgement that could effect our conclusions.
-		
+
+Our definition of bad smells is limited to those represented by OO code metrics (a premise often used in related work).   
+XTREE, Shatnawi, Alves et al. can  only comment
+on bad smells   expressed as code metrics 
+in the historical log of a project. 
+
+
+If developers want to justify their refactorings
+via bad smells expressed in other terminology,
+then the  analysis of this paper must:
+\begin{itemize}
+	\item Either wait till 
+	data about those new
+	terms has been collected. 
+	\item Or, apply cutting edge transfer learning
+	methods~\cite{Nam15,Jing15} to map data from other projects
+	into the current one.
+	\end{itemize}
+	Note that the transfer learning approach would
+	be highly experimental and require more study
+	before it can be safely recommended.
+	
+	Sampling bias threatens any data mining experiment; i.e., what matters
+	there may not be true here. For example, the data sets used here comes from Jureczko et al. and any biases in their selection procedures
+	threaten the validity of these results. 
+	That said,
+	the best we can do is define our methods and publicize our data and code so that other researchers can
+	try to repeat our results and, perhaps, point out a previously unknown bias
+	in our analysis. Hopefully, other researchers will emulate our methods in
+	order to repeat, refute, or improve our results. 
+
 		
 		\section{Conclusions}
 		How to discourage useless code reorganizations?
