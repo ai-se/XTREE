@@ -88,7 +88,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	\begin{frontmatter}
 		
 		% \title{How to Discourage Useless Refactorings}
-		\title{Toward Intelligent Refactoring Recommendations}
+		\title{Recommendations For Intelligent Code Reorganization}
 		
 		\author{Rahul Krishna\corref{cor1}\textsuperscript{a,}}
 		\ead{rkrish11@ncsu.edu}
@@ -103,7 +103,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		
 		\begin{abstract} 
 			{\bf Context: } 
-			Developers use bad code smells to guide refactoring.
+			Developers use bad code smells to guide code reorganization.
 			Yet developers, text books, tools, and researchers disagree on which bad smells are important.
 			%Many bad smell detectors recommend refactoring when static code measure
 			%cross some threshold boundary. 
@@ -111,7 +111,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 			%should trigger code improvement or preventative maintenance.  
 			
 			\noindent 
-			{\bf Objective:} To evaluate the likelihood that a refactoring to address bad code smells will yield improvement in the defect-proneness of the code.
+			{\bf Objective:} To evaluate the likelihood that a code reorganization to address bad code smells will yield improvement in the defect-proneness of the code.
 			
 			\noindent
 			{\bf Method: } We introduce XTREE, a tool that analyzes a historical log of defects seen previously in the code and generates a set of useful\footnote{Need to define useful in precise terms} code changes.
@@ -125,10 +125,10 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 			
 			\noindent
 			{\bf Conclusion: }
-			Before undertaking a refactoring based on a bad smell report,
-			use a tool like XTREE to check and ignore any refactorings   that  are useless; i.e. which lacks evidence
+			Before undertaking a code reorganization based on a bad smell report,
+			use a tool like XTREE to check and ignore any code reorganizations   that  are useless; i.e. which lacks evidence
 			in the historical record  that it is useful to make that change.
-			Note that this use case applies to both manual refactorings proposed by developers
+			Note that this use case applies to both manual code reorganizations proposed by developers
 			as well as refactoring  conducted by automatic methods.
 			This recommendation assumes that there is an historical record.
 			If none exists, then the results of this paper could be use used as a guide (see our
@@ -159,9 +159,9 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		of introducing errors''.
 	\end{quote}
 	
-	Bad smells are a widely used technique for evaluating code. While the original bad small concept was largely subjective [REF], researchers including Marinescu [REF] and others has provided formal definitions of ``bad smells'' in terms of static code attributes such size, complexity, coupling, and other metrics. Consequently, code smells are captured by popular static analysis tools such as PMD [REF], CheckStyle [REF], FindBugs [REF], and SonarQube [REF], although not always explicitly labeled as such. 
+	Bad smells are a widely used technique for evaluating code. While the original bad small concept was largely subjective~\cite{fowler99}, researchers including Marinescu~\cite{marinescu06} and others has provided formal definitions of ``bad smells'' in terms of static code attributes such size, complexity, coupling, and other metrics. Consequently, code smells are captured by popular static analysis tools such as PMD\footnote{https://github.com/pmd/pmd}, CheckStyle\footnote{http://checkstyle.sourceforge.net/}, FindBugs\footnote{http://findbugs.sourceforge.net/}, and SonarQube\footnote{http://www.sonarqube.org/}, although not always explicitly labeled as such. 
 	
-	Refactoring bad smells from code is generally accepted as a recommended practice, but refactoring by definition does not change the external functionality of the system and thus may have no perceived value. For example, this paper began when a Washington-based software company shared one of their management challenges with us: their  releases are delayed by developers spending  much time removing bad smells within their code. 
+	Refactoring bad smells from code is generally accepted as a recommended practice, but code reorganization by definition does not change the external functionality of the system and thus may have no perceived value. For example, this paper began when a Washington-based software company shared one of their management challenges with us: their  releases are delayed by developers spending  much time removing bad smells within their code. 
 	%This management team wanted some way to check if all that activity was useful. 
 	Kim et al.\cite{kim2012field} surveyed developers at Microsoft and found that refactoring incurs significant cost and risks. A Google search on the terms ``refactoring cost'' yields numerous threads on StackOverlfow from developers asking how to justify refactoring and when the costs of refactoring outweight its benefits. 
 	
@@ -185,9 +185,9 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	% Their human programmers are refactoring
 	% code all the time, perhaps too much so.
 	% Hence, the management goal
-	The challenge is to encourage refactorings that result in perceivable benefits (such as reduced defect proneness or lower maintenance costs) and avoid refactorings with no demonstrable benefit and thus waste effort.
+	The challenge is to encourage code reorganizations that result in perceivable benefits (such as reduced defect proneness or lower maintenance costs) and avoid code reorganizations with no demonstrable benefit and thus waste effort.
 	
-	This paper describes one approach to evaluate whether refactorings that change the structure of code are likely to have a perceivable benefit by evaluating:
+	This paper describes one approach to evaluate whether code reorganizations that change the structure of code are likely to have a perceivable benefit by evaluating:
 	\bi
 	\item If there is no evidence in the historical record that changing ``X'' is useful;
 	\item Then discourage developers from doing ``X''.
@@ -196,7 +196,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		change oracle} and a {\em secondary verification oracle}.
 	By combining these two oracles,
 	we can generate and validate useful
-	changes to code modules. We focus on ``bad smells'' indicated by code metrics such as size and complexity as captured in popular tools such as SonarQube [REF] and Klocwerk [REF].
+	changes to code modules. We focus on ``bad smells'' indicated by code metrics such as size and complexity as captured in popular tools such as SonarQube and Klocwerk [REF].
 	
 	In this paper, we use 
 	the XTREE cluster delta algorithm as the {\em primary change  oracle}.
@@ -216,7 +216,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	When these oracles were applied to defect data from
 	open source object-oriented software systems, we discovered a {\em conjunctive fallacy}
 	in the bad smell literature~\cite{erni96,bender99,Shatnawi10,Alves2010,hermans15}.
-	A common heuristic is to recommend refactoring of ``bad'' code
+	A common heuristic is to recommend code reorganization of ``bad'' code
 	to make it ``better'' as follows: for all static code measures that exceed some threshold, make changes such that the thresholds are no longer exceeded. That is:
 	\begin{equation}\label{eq:df}
 		\scriptstyle
@@ -230,7 +230,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	to remove the ``bad'' smells. In reality, there exists an intricate set of associations between static code measures
 	such that {\em decreasing}  $a_i$ necessitates {\em increasing} $a_j$.
 	It is easy to see why this is so.
-	A requirement for  refactoring is that the new code supports the same functionality
+	A requirement for  code reorganization is that the new code supports the same functionality
 	as before. If we pull code out of a function (since that function has grown too
 	large), {\em that functionality has to go somewhere else}. What we see in XTREE's change
 	recommendation is that if we decrease a module's lines of code  then in the refactored
@@ -240,8 +240,8 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	
 	\subsection{Structure of this Paper}
 	
-	This paper  claims that (a)~XTREE is a  better way than \eq{df}  to define useful changes to software and (b)~those changes are useful for recognizing   superfluous refactorings since they usually refer to a very 
-	small subset of the static code measures (which allows us to rule out refactorings based on any of the omitted
+	This paper  claims that (a)~XTREE is a  better way than \eq{df}  to define useful changes to software and (b)~those changes are useful for recognizing   superfluous code reorganizations since they usually refer to a very 
+	small subset of the static code measures (which allows us to rule out code reorganizations based on any of the omitted
 	static code measures). 
 	In support of these claims, 
 	the rest of this paper is structured as follows. In Section~2, we offer some background on bad smells. In Section~3, 
@@ -265,7 +265,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		Of all the code change oracles studied here, XTREE recommends the fewest number of changes to static code measures.
 	\end{lesson}
 	
-	{\bf RQ3: Stopping}: Our advice to managers is to discourage refactoring based on changes that lack
+	{\bf RQ3: Stopping}: Our advice to managers is to discourage code reorganization based on changes that lack
 	historical evidence of being effective. How effective is XTREE at offering such ``stopping points'' (i.e. clear guidance on what {\em not} to do)??
 	\begin{lesson}
 		In  any  project,  XTREE's  recommended  changes  only  mentions one to four 
@@ -290,56 +290,22 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	\bi
 	\item
 	Yes,  indeed, their programmers
-	were wasting time on   performing refactorings  that  decreased multiple measures when, in fact,
+	were wasting time on   performing code reorganizations  that  decreased multiple measures when, in fact,
 	they should be trying to {\em decrease} some measures while {\em increasing} others.
 	\item
 	Across all studied projects, XTREE found that  around one-fifth  
 	of the measures were usually found within  change recommendations. That is, it is 80\% likely that
-	that refactoring based on reducing any one measurement picked at random will be useful.
+	that code reorganization based on reducing any one measurement picked at random will be useful.
 	\ei
 	Consequently, we  recommend the following use case for  XTREE:
 	\bi
-	\item Before doing  refactoring based on a bad smell report...
-	\item ...check and discourage any refactoring   for which there is no proof
+	\item Before doing  code reorganization based on a bad smell report...
+	\item ...check and discourage any code reorganization   for which there is no proof
 	in the historical record that the change improves the code.
 	\ei
-	This use case described  applies to both manual refactorings proposed by developers
+	This use case described  applies to both manual code reorganizations proposed by developers
 	as well as refactoring conducted by automatic methods~\cite{mkaouer2015many}. That is, XTREE could optimize automatic
 	code refactoring by discouraging refactorings for useless goals.
-	
-	
-	
-	\subsection{ Threats to Validity}
-	
-	The results of this paper are biased by out choice of refactoring goal (reducing defects) and our choice
-	of measures collected from software project (OO measures such as
-	depth of inheritance, number of child classes, etc).
-	
-	That said, it should be possible extend the methods of this paper to other kinds of goals (e.g. maintainability, reliability, security,
-	or the knowledge sharing measures favoured by Bosu and Carver~\cite{bosu13}) and other kinds of inputs (e.g. the process measures favored by Rahman, Devanbu et al.\cite{Rahman2013})  as follows:
-	\bi
-	\item Find a data source for the other measures of interest;
-	\item Implement another secondary verification oracle that can assess maintainability, reliability, security, etc;
-	\item Implement a better primary verification oracle that can do ``better'' that XTREE at finding changes (where ``better'' is defined in terms 
-	of the opinions of the verification oracle).
-	\ei
-	To assist other researchers exploring these points, we offer a full replication package for this study at  https://github.com/ai-se/XTREE\_IST.
-	
-	The results of this paper are also specific to the data sets explored here.
-	Such sampling bias threatens any data mining experiment; i.e., what matters
-	{\em there} may not be true {\em here}. For example, the data sets used here comes from a survey of
-	open source JAVA projects from Jureczko et al.~\cite{jureczko10}. Any biases in their selection procedures
-	threaten the validity of these results. 
-	
-	That said,
-	the best we can do is define our methods and publicize our data and code so that other researchers can
-	try to repeat our results and, perhaps, point out a previously unknown bias
-	in our analysis. Hopefully, other researchers will emulate our methods in
-	order to repeat, refute, or improve our results. 
-	
-	The recommendation to management, shown on page one of this paper,  was to discourage developers doing ``X'' if there was no historical evidence that ``X'' was useful. 
-	This recommendation assumes that such an  historical record can be accessed. If not,  then the results of this paper could be use used as a guide (see our Table 8). Alternatively, some form of transfer learning~\cite{Nam15,Jing15,krishna16} could be used to import data from another project (but more research would be required to test the validity of combing tools like XTREEs with transfer learning). 
-	
 	
 	
 	
@@ -367,7 +333,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	
 	
 	Much research endorses them to guide
-	code improvement (e.g., refactoring or preventative maintenance). A recent literature review by Tufano et al.~\cite{Tufano2015}  
+	code improvement (e.g., code reorganization or preventative maintenance). A recent literature review by Tufano et al.~\cite{Tufano2015}  
 	lists dozens of papers on smell detection and repair tools. 
 	Yet
 	other papers cast doubt on the value of bad smells
@@ -465,7 +431,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	Yamashita'13 study and the developer survey   
 	believe
 	that very few  code smells are   high priority issues
-	requiring refactoring. 
+	requiring code reorganization. 
 	
 	In summary, just because one developer strongly believes in the importance of a bad smells does not mean that belief transfers to other developers or projects.
 	Developers can be clever, but their thinking can also be distorted
@@ -530,6 +496,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 	measures   how well this  model predicts for  defects. A univariate logistic regression was conducted comparing metrics to defect counts. Any code metric with $p>0.05$ is ignored as being a poor defect predictor. Thresholds are then learned from the surviving metrics $M_c$ using
 	an equation proposed by Bender:
 	$$ \mathit{bad\; smell\; if\;} M_c > VARL$$
+	Where,
 	\begin{equation}
 		VARL = p^{-1}(p_0) =  \frac{1}{\beta }\left( {\log \left( {\frac{{{p_1}}}{{1 - {p_1}}}} \right) - \alpha } \right) 
 	\end{equation}
@@ -687,7 +654,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		{\bf RQ1: Effectiveness: } which of the methods defined in Section 3 is the best change oracle for identifying what and how code modules should be changed? 
 		To   answer to this question, we will assume that developers
 		refactor their code until the bad smell thresholds are not violated.
-		This refactoring will start with some {\em initial} code
+		This code reorganization will start with some {\em initial} code
 		base that is changed to a {\em new} code base. 
 		For example, if the bad smell is \mbox{{\em loc $>100$}} and a 
 		code module has 500 lines of code, we reason
@@ -746,8 +713,8 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		% preserve the behavior of the system (i.e. the same tests
 		% should pass before and after the refactoring). 
 		Also, it many not be practical
-		to assessing refactorings by making the
-		refactorings,  then seeing what happens to that code for the rest
+		to assessing code reorganizations by making the
+		code reorganizations,  then seeing what happens to that code for the rest
 		of the project. In a test-driven agile project, as
 		SCRUM meetings change what stories are implemented next,
 		the operational profile that lead to defects in the old
@@ -759,7 +726,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		use a {\em secondary verification oracle} (which is learned separately
 		to the primary oracle) that   assesses
 		how defective is the code before and after some
-		refactoring. 
+		code reorganization. 
 		For their second oracle,
 		Cheng, O'Keefe, Moghadam and  Mkaouer et al. use the QMOOD hierarchical
 		quality model~\cite{Bansiya02}.
@@ -945,7 +912,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		a code attribute. For Ant, Ivy, Lucene, Jedit, and Poi, those frequencies
 		are  \mbox{3, 3, 3, 4, 1, 2} respectively (out of twenty). This means that, usually, XTREE omits references to \mbox{17,17,17,16,19,18} static
 		code attributes (out of 20). 
-		Any refactoring based on a bad smell detector that uses  these omitted code attributes could hence  be stopped.
+		Any code reorganization based on a bad smell detector that uses  these omitted code attributes could hence  be stopped.
 		
 		Hence our {\bf Result3} is that, in a any  project,  XTREE's  recommended  changes  only  mentions one to four 
 		of the  static code attributes.  Any bad smell defined in terms of the remaining 19 to 16 code attributes (i.e. most of them)
@@ -976,7 +943,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 		but making large increases to {\em cbo} (coupling between
 		objects). Here, XTREE is advising us to break up
 		large classes class by into services
-		in other classes. Note that such a refactoring will, by
+		in other classes. Note that such a code reorganization will, by
 		definition, increase the coupling between objects. 
 		Note also that such increases  to reduce
 		defects would never be proposed by the outlier methods
@@ -1010,7 +977,7 @@ fill=Gray!40,  drop shadow={fill=black, opacity=1}]
 
 		\section{Threats to Validity}\label{sect:valid}
 
-The results of this paper are biased by out choice of refactoring goal (reducing defects) and our choice
+The results of this paper are biased by our choice of code reorganization goal (reducing defects) and our choice
 of measures collected from software project (OO measures such as
   depth of inheritance, number of child classes, etc).
   
@@ -1089,7 +1056,7 @@ This recommendation assumes that such an  historical record can be accessed. If 
 		
 		
 		\section{Conclusions}
-		How to discourage useless refactorings?
+		How to discourage useless code reorganizations?
 		We say: ignore those not supported by the historical log of data from
 		the current project.  
 		When that data is not available (e.g. early
@@ -1116,7 +1083,7 @@ This recommendation assumes that such an  historical record can be accessed. If 
 			\item XTREE's conjunctions proved to be arguably as effective
 			as those of Alves (see \fig{jur}) but far less verbose (see \fig{counts}). Since XTREE {\em approves} of fewer changes
 			it hence {\em disapproves} of most changes. This makes it a better tool for critiquing and rejecting
-			many of the refactorings.
+			many of the code reorganizations.
 		\end{itemize}
 		Finally, XTREE does not suffer from the conjunctive fallacy.
 		Older methods, such as those proposed by  Shatnawi and Alves assumed
