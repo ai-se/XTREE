@@ -1,0 +1,77 @@
+
+	\begin{figure}[tbp!]
+	\begin{shaded}
+  ~\hrule~
+  
+ {\bf Figure 3.A: Measuring Variability} 
+	
+	For  continuous and discrete values,
+the {\em variability} can be measured using standard deviation $\sigma$ or entropy $e$.
+Note that \mbox{$\sigma = \sqrt{\sum^n_{i=1} \left( \frac{(x_i - \bar{x})^2}{n-1}\right)}$}
+where $\bar{x}$ is the mean of  numeric features $x_1,x_2,..x_n$.
+Also \mbox{$e = - \sum^n_{i=1} p_i \mathit{log}_2(p_i)$} 
+for  $n$ discrete values  at frequency
+$f_1,f_2,.. f_n$ for \mbox{$N = \sum^n_{i=1} f_i$} and $p_i = f_i/N$.
+
+  ~\hrule~
+	
+	{\bf Figure 3.B: Measuring distance}
+	
+	We use
+		 Aha et al.'s standard Euclidean distance measure~\cite{aha91}.  For $F$ independent features, the measure returns   $d(X,Y)=\sqrt{\sum_i^F  w_i\Delta(X_i,Y_i)^2}$. Here, $w_i$ is a weight term for each feature
+		 (usually set to 1).
+			Within $\Delta$, if   $X_i,Y_i$ are both missing  values, then  return 1.
+			Otherwise, replace any  missing items with values that maximizes the following.
+			For numerics, $\Delta$ normalizes $X_i,Y_i$ (to the range 0,1 for min,max) then
+			returns 
+			$X_i - Y_i$. For discrete variables, $\Delta$ returns 0,1 if $X_i,Y_i$ are the
+			same,different (respectively).  
+
+ ~\hrule~
+ 
+	{\bf Figure 3.C: Top-down Clustering with WHERE}
+	
+				WHERE  divides data into  groups of size $\alpha=\sqrt{N}$. 
+		Using this measure, WHERE runs as follows:
+		\begin{enumerate}[leftmargin=3mm]
+			\item Find   two   distance cases,  $X,Y$
+			by picking any case $W$ at random, then setting $X$ to its most
+			distant case, then setting $Y$ to the case most distant from
+			$X$
+			(which requires only $O(2N)$ comparisons).
+			\item Project each case $Z$
+			to position $x$ on a    lines running from $X$ to $Y$: if $a,b$  are distances  $Z$ to $X,Y$  then  $x = (a^2+c^2 - b^2)/(2ac)$.
+			\item Split the data at the median $x$ value of all cases.
+			\item For   splits larger than  $\alpha=\sqrt{N}$, recurse from step1.
+		\end{enumerate}
+ In terms of related work,
+	  the above is similar in approach to Boley's PDDP algorithm~\cite{boley98}, but PDDP requires an $O(N^2)$ calculation
+	  at each recursive level to find the PCA principle component. Our method, on the other hand,
+	  performs the same task with only $O(2N)$ distance calculations 	using the 
+	  FASTMAP heuristic~\cite{Faloutsos1995} shown in step1. Platt~\cite{platt05} notes that FASTMAP is a  Nystr\"om approximation to the first component of PCA.  
+	  
+	   ~\hrule~
+	   
+	{\bf Figure 3.D: Top-down division with Decision Trees}
+	
+	Find a split in the values of  independent features that most reduces the variability
+  of the dependent feature (measured using \fig{where}.A). Construct a standard decision tree using these splits.
+	
+	 ~\hrule~
+	 
+	 	{\bf Figure 3.E: Finding the most informative rows}
+	
+
+Discretize all numeric features using the Fayyad-Iranni discretizer~\cite{FayIra93Multi}
+(divide numeric columns into bins $B_i$, each of which  select for the fewest cluster ids).
+Let feature $F$ have bins $B_i$, each of which contains $n_i$ rows
+and 
+let each bin $B_i$ have entropy $e_i$ computed from the frequency of clusters seen in that bin (computed from \fig{where}.A).
+Cull the the features as per~\cite{papa13}; i.e. just use the $\beta=33\%$ most informative features
+where  the   value of  feature $F$ is $\sum_i e_i\frac{n_i}{N}$ ($N$ is the number of rows).
+
+~\hrule~ 
+
+	  \end{shaded}
+		\caption{Some algorithms used in this paper.}\label{fig:where}
+		\end{figure}

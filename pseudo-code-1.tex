@@ -1,0 +1,39 @@
+\begin{figure}[t] 
+~\hrule~
+\begin{minipage}[t]{.45\linewidth}
+% \scriptsize\vspace{1mm}
+\begin{code}[left]
+def kNN(training, testing, F=33):
+  """ Identify contrast sets for testing
+      data using Nearest Neighbor """
+  def exemplar(rows):
+    return centroid(rows)
+  
+  def nearest(me, clusters):
+    return sorted(clusters,
+                  key=lambda F: dist(exemplar(F), me))
+  
+  def envy(me, clusters):
+    one=exemplar(nearest(me, clusters))
+    better=[c for c in clusters if score(c)<score(one)]
+    two=exemplar(nearest(one, better))
+    return one, two
+  
+  def FSel(list, Frac):
+    "Return top Frac % of the list"
+    
+  def contrastSet(t):
+    clusters = WHERE(training)
+    one, two = envy(t,clusters)
+    return FSel(one-two, Frac=F)
+  
+  # ---- Begin Main Code ---------------
+  return [contrastSet(t) for t in testing]
+\end{code}
+\end{minipage}
+~\hrule~
+\caption{Nearest Neighbor (Python-style psuedo-code).
+For brevity's sake, this code skips certain low-level details.
+For a full working implementation, see \url{http://git.io/v36sb}.}
+\label{fig:knncode}
+\end{figure}

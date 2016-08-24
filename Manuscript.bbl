@@ -1,0 +1,345 @@
+\begin{thebibliography}{10}
+
+\bibitem{fowler99}
+M.~Fowler, K.~Beck, J.~Brant, W.~Opdyke, and D~Roberts.
+\newblock {\em Refactoring: Improving the Design of Existing Code}.
+\newblock Addison-Wesley Longman, Boston, MA, USA, 1999.
+
+\bibitem{kim2012field}
+Miryung Kim, Thomas Zimmermann, and Nachiappan Nagappan.
+\newblock A field study of refactoring challenges and benefits.
+\newblock In {\em Proceedings of the ACM SIGSOFT 20th International Symposium
+  on the Foundations of Software Engineering}, page~50. ACM, 2012.
+
+\bibitem{breiman2001random}
+Leo Breiman.
+\newblock Random forests.
+\newblock {\em Machine learning}, 45(1):5--32, 2001.
+
+\bibitem{chawla2002smote}
+Nitesh~V. Chawla, Kevin~W. Bowyer, Lawrence~O. Hall, and W.~Philip Kegelmeyer.
+\newblock Smote: synthetic minority over-sampling technique.
+\newblock {\em Journal of artificial intelligence research}, 16:321--357, 2002.
+
+\bibitem{erni96}
+Karin Erni and Claus Lewerentz.
+\newblock Applying design-metrics to object-oriented frameworks.
+\newblock In {\em Software Metrics Symposium, 1996., Proceedings of the 3rd
+  International}, pages 64--74. IEEE, 1996.
+
+\bibitem{bender99}
+Ralf Bender.
+\newblock Quantitative risk assessment in epidemiological studies investigating
+  threshold effects.
+\newblock {\em Biometrical Journal}, 41(3):305--319, 1999.
+
+\bibitem{Shatnawi10}
+R.~Shatnawi.
+\newblock A quantitative investigation of the acceptable risk levels of
+  object-oriented metrics in open-source systems.
+\newblock {\em IEEE Transactions on Software Engineering}, 36(2):216--225,
+  March 2010.
+
+\bibitem{Alves2010}
+Tiago~L. Alves, Christiaan Ypma, and Joost Visser.
+\newblock {Deriving metric thresholds from benchmark data}.
+\newblock In {\em 2010 IEEE Int. Conf. Softw. Maint.}, pages 1--10. IEEE, sep
+  2010.
+
+\bibitem{hermans15}
+Felienne Hermans, Martin Pinzger, and Arie van Deursen.
+\newblock Detecting and refactoring code smells in spreadsheet formulas.
+\newblock {\em Empirical Software Engineering}, 20(2):549--575, 2015.
+
+\bibitem{mkaouer2015many}
+Wiem Mkaouer, Marouane Kessentini, Adnan Shaout, Patrice Koligheu, Slim
+  Bechikh, Kalyanmoy Deb, and Ali Ouni.
+\newblock Many-objective software remodularization using nsga-iii.
+\newblock {\em ACM Transactions on Software Engineering and Methodology
+  (TOSEM)}, 24(3):17, 2015.
+
+\bibitem{bosu13}
+A.~Bosu and J.~C. Carver.
+\newblock Impact of peer code review on peer impression formation: A survey.
+\newblock In {\em Empirical Software Engineering and Measurement, 2013 ACM /
+  IEEE International Symposium on}, pages 133--142, Oct 2013.
+
+\bibitem{Rahman2013}
+Foyzur Rahman and Premkumar Devanbu.
+\newblock {How, and why, process metrics are better}.
+\newblock In {\em Proceedings - International Conference on Software
+  Engineering}, pages 432--441, 2013.
+
+\bibitem{jureczko10}
+Marian Jureczko and Lech Madeyski.
+\newblock {Towards identifying software project clusters with regard to defect
+  prediction}.
+\newblock In {\em Proceedings of the 6th International Conference on Predictive
+  Models in Software Engineering}, PROMISE '10, pages 9:1----9:10. ACM, 2010.
+
+\bibitem{Nam15}
+Jaechang Nam and Sunghun Kim.
+\newblock Heterogeneous defect prediction.
+\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2015, pages 508--519, New York, NY, USA,
+  2015. ACM.
+
+\bibitem{Jing15}
+Xiaoyuan Jing, Fei Wu, Xiwei Dong, Fumin Qi, and Baowen Xu.
+\newblock Heterogeneous cross-company defect prediction by unified metric
+  representation and cca-based transfer learning.
+\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2015, pages 496--507, New York, NY, USA,
+  2015. ACM.
+
+\bibitem{krishna16}
+L.~Layman R.~Krishna, T.Menzies.
+\newblock "too much automation? the bellwether effect and its implications for
+  transfer learning.
+\newblock In {\em ASE'16}, 2016.
+
+\bibitem{krishna2015actionable}
+Rahul Krishna and Tim Menzies.
+\newblock Actionable= cluster+ contrast?
+\newblock In {\em 2015 30th IEEE/ACM International Conference on Automated
+  Software Engineering Workshop (ASEW)}, pages 14--17. IEEE, 2015.
+
+\bibitem{Tufano2015}
+Michele Tufano, Fabio Palomba, Gabriele Bavota, Rocco Oliveto, Massimiliano {Di
+  Penta}, Andrea {De Lucia}, and Denys Poshyvanyk.
+\newblock {When and Why Your Code Starts to Smell Bad}.
+\newblock In {\em 2015 IEEE/ACM 37th IEEE Int. Conf. Softw. Eng.}, pages
+  403--414. IEEE, May 2015.
+
+\bibitem{Mantyla2004}
+M.V. Mantyla, J.~Vanhanen, and C.~Lassenius.
+\newblock Bad smells - humans as code critics.
+\newblock In {\em Software Maintenance, 2004. Proceedings. 20th IEEE
+  International Conference on}, pages 399--408, Sept 2004.
+
+\bibitem{Yamashita2013}
+A.~Yamashita and L.~Moonen.
+\newblock Do developers care about code smells? an exploratory survey.
+\newblock In {\em Reverse Engineering (WCRE), 2013 20th Working Conference on},
+  pages 242--251, Oct 2013.
+
+\bibitem{Sjoberg2013}
+D.I.K. Sjoberg, A.~Yamashita, B.C.D. Anda, A.~Mockus, and T.~Dyba.
+\newblock Quantifying the effect of code smells on maintenance effort.
+\newblock {\em Software Engineering, IEEE Transactions on}, 39(8):1144--1156,
+  Aug 2013.
+
+\bibitem{passos11}
+Carol Passos, Ana~Paula Braun, Daniela~S. Cruzes, and Manoel Mendonca.
+\newblock Analyzing the impact of beliefs in software project practices.
+\newblock In {\em ESEM'11}, 2011.
+
+\bibitem{jorgensen09}
+Magne J{\o}rgensen and Tanja~M. Gruschke.
+\newblock The impact of lessons-learned sessions on effort estimation and
+  uncertainty assessments.
+\newblock {\em Software Engineering, IEEE Transactions on}, 35(3):368 --383,
+  May-June 2009.
+
+\bibitem{mei15}
+Meiyappan Nagappan, Romain Robbes, Yasutaka Kamei, \'{E}ric Tanter, Shane
+  McIntosh, Audris Mockus, and Ahmed~E. Hassan.
+\newblock An empirical study of goto in c code from github repositories.
+\newblock In {\em Proceedings of the 2015 10th Joint Meeting on Foundations of
+  Software Engineering}, ESEC/FSE 2015, pages 404--414, New York, NY, USA,
+  2015. ACM.
+
+\bibitem{me16phase}
+T.~Menzies, W.~Nichols, F.~Shull, and L.~Layman.
+\newblock Are delayed issues harder to resolve?
+\newblock {\em Empirical Software Engineering (submitted)}, 2016.
+\newblock Online at https://goo.gl/MZ0h6H.
+
+\bibitem{prem16}
+Prem Devanbu, Thomas Zimmermann, and Christian Bird.
+\newblock Belief \& evidence in empirical software engineering.
+\newblock In {\em Proceedings of the 38th International Conference on Software
+  Engineering}, pages 108--119. ACM, 2016.
+
+\bibitem{prasad13}
+Vinay Prasad, Andrae Vandross, Caitlin Toomey, Michael Cheung, Jason Rho,
+  Steven Quinn, Satish~Jacob Chacko, Durga Borkar, Victor Gall, Senthil
+  Selvaraj, Nancy Ho, and Adam Cifu.
+\newblock A decade of reversal: An analysis of 146 contradicted medical
+  practices.
+\newblock {\em Mayo Clinic Proceedings}, 88(8):790 -- 798, 2013.
+
+\bibitem{aschwanden10}
+Christie Aschwanden.
+\newblock {Convincing the Public to Accept New Medical Guidelines}.
+\newblock \url{http://goo.gl/RT6SK7}, 2010.
+\newblock FiveThiryEight.com. Accessed: 2015-02-10.
+
+\bibitem{aschwanden15}
+Christie Aschwanden.
+\newblock {Your Brain Is Primed To Reach False Conclusionss}.
+\newblock \url{http://goo.gl/OO3B7s}, 2015.
+\newblock FiveThirtyEight.com. Accessed: 2015-02-10.
+
+\bibitem{Kerievsky2005}
+Joshua Kerievsky.
+\newblock {\em Refactoring to Patterns}.
+\newblock Addison-Wesly Professional, 2005.
+
+\bibitem{Lanza2006}
+Michele Lanza and Radu Marinescu.
+\newblock {\em {Object-Oriented Metrics in Practice: Using Software Metrics to
+  Characterize, Evaluate, and Improve the Design of Object-Oriented Systems}}.
+\newblock Springer Verlag, 2006.
+
+\bibitem{sq15}
+A.~Campbell.
+\newblock Sonar{Q}ube: Open source quality management, 2015.
+\newblock Website: tiny.cc/2q4z9x.
+
+\bibitem{me12c}
+R~Borges and T~Menzies.
+\newblock {Learning to Change Projects}.
+\newblock In {\em Proceedings of PROMISE'12, Lund, Sweden}, 2012.
+
+\bibitem{localvsglobal}
+T.~Menzies, A.~Butcher, D.~Cok, A.~Marcus, L.~Layman, F.~Shull, B.~Turhan, and
+  T.~Zimmermann.
+\newblock Local versus global lessons for defect prediction and effort
+  estimation.
+\newblock {\em Software Engineering, IEEE Transactions on}, 39(6):822--834,
+  June 2013.
+
+\bibitem{fi}
+Usama~M. Fayyad and Keki~B. Irani.
+\newblock Multi-interval discretization of continuousvalued attributes for
+  classification learning.
+\newblock In {\em Thirteenth International Joint Conference on Articial
+  Intelligence}, volume~2, pages 1022--1027. Morgan Kaufmann Publishers, 1993.
+
+\bibitem{Cheng10}
+Betty Cheng and Adam Jensen.
+\newblock On the use of genetic programming for automated refactoring and the
+  introduction of design patterns.
+\newblock In {\em Proceedings of the 12th Annual Conference on Genetic and
+  Evolutionary Computation}, GECCO '10, pages 1341--1348, New York, NY, USA,
+  2010. ACM.
+
+\bibitem{OKeeffe08}
+Mark O'Keeffe and Mel~\'{O} Cinn{\'e}ide.
+\newblock Search-based refactoring: An empirical study.
+\newblock {\em J. Softw. Maint. Evol.}, 20(5):345--364, September 2008.
+
+\bibitem{OKeeffe07}
+Mark~Kent O'Keeffe and Mel~O. Cinneide.
+\newblock Getting the most from search-based refactoring.
+\newblock In {\em Proceedings of the 9th Annual Conference on Genetic and
+  Evolutionary Computation}, GECCO '07, pages 1114--1120, New York, NY, USA,
+  2007. ACM.
+
+\bibitem{Moghadam2011}
+Iman~Hemati Moghadam.
+\newblock {\em Search Based Software Engineering: Third International
+  Symposium, SSBSE 2011, Szeged, Hungary, September 10-12, 2011. Proceedings},
+  chapter Multi-level Automated Refactoring Using Design Exploration, pages
+  70--75.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2011.
+
+\bibitem{Mkaouer14}
+Mohamed~Wiem Mkaouer, Marouane Kessentini, Slim Bechikh, Kalyanmoy Deb, and Mel
+  \'{O}~Cinn{\'e}ide.
+\newblock Recommendation system for software refactoring using innovization and
+  interactive dynamic optimization.
+\newblock In {\em Proceedings of the 29th ACM/IEEE International Conference on
+  Automated Software Engineering}, ASE '14, pages 331--336, New York, NY, USA,
+  2014. ACM.
+
+\bibitem{Bansiya02}
+Jagdish Bansiya and Carl~G. Davis.
+\newblock A hierarchical model for object-oriented design quality assessment.
+\newblock {\em IEEE Trans. Softw. Eng.}, 28(1):4--17, January 2002.
+
+\bibitem{Breiman2001}
+L~Breiman.
+\newblock {Random forests}.
+\newblock {\em Machine learning}, pages 5--32, 2001.
+
+\bibitem{lessmann}
+S.~Lessmann, B.~Baesens, C.~Mues, and S.~Pietsch.
+\newblock Benchmarking classification models for software defect prediction: A
+  proposed framework and novel findings.
+\newblock {\em Software Engineering, IEEE Transactions on}, 34(4):485--496,
+  July 2008.
+
+\bibitem{me07b}
+T.~Menzies, J.~Greenwald, and A.~Frank.
+\newblock Data mining static code attributes to learn defect predictors.
+\newblock {\em IEEE Trans. Softw Eng.}, 33(1):2--13, Jan 2007.
+\newblock Available from \url{http://menzies.us/pdf/06learnPredict.pdf}.
+
+\bibitem{pelayo07}
+L.~Pelayo and S.~Dick.
+\newblock Applying novel resampling strategies to software defect prediction.
+\newblock In {\em Fuzzy Information Processing Society, 2007. NAFIPS '07.
+  Annual Meeting of the North American}, pages 69--72, June 2007.
+
+\bibitem{Chawla2002}
+Nitesh~V. Chawla, Kevin~W. Bowyer, Lawrence~O. Hall, and W.~Philip Kegelmeyer.
+\newblock {SMOTE: Synthetic minority over-sampling technique}.
+\newblock {\em Journal of Artificial Intelligence Research}, 16:321--357, 2002.
+
+\bibitem{fu:ase15}
+Wei Fu, Tim Menzies, and Xipeng Shen.
+\newblock Tuning for software analytics: is it really necessary?
+\newblock {\em Submitted to Information and Software Technology}, 2016.
+
+\bibitem{storn97}
+Rainer Storn and Kenneth Price.
+\newblock {Differential Evolution --- A Simple and Efficient Heuristic for
+  global Optimization over Continuous Spaces}.
+\newblock {\em Journal of Global Optimization}, 11(4):341--359, 1997.
+
+\bibitem{mittas13}
+Nikolaos Mittas and Lefteris Angelis.
+\newblock Ranking and clustering software cost estimation models through a
+  multiple comparisons algorithm.
+\newblock {\em IEEE Trans. Software Eng.}, 39(4):537--551, 2013.
+
+\bibitem{efron93}
+Bradley Efron and Robert~J Tibshirani.
+\newblock {\em An introduction to the bootstrap}.
+\newblock Mono. Stat. Appl. Probab. Chapman and Hall, London, 1993.
+
+\bibitem{shepperd12a}
+Martin~J. Shepperd and Steven~G. MacDonell.
+\newblock Evaluating prediction systems in software project estimation.
+\newblock {\em Information {\&} Software Technology}, 54(8):820--827, 2012.
+
+\bibitem{kampenes07}
+Vigdis~By Kampenes, Tore Dyb{\aa}, Jo~Erskine Hannay, and Dag I.~K. Sj{\o}berg.
+\newblock A systematic review of effect size in software engineering
+  experiments.
+\newblock {\em Information {\&} Software Technology}, 49(11-12):1073--1086,
+  2007.
+
+\bibitem{Kocaguneli2013:ep}
+Ekrem Kocaguneli, Thomas Zimmermann, Christian Bird, Nachiappan Nagappan, and
+  Tim Menzies.
+\newblock {Distributed development considered harmful?}
+\newblock In {\em Proceedings - International Conference on Software
+  Engineering}, pages 882--890, 2013.
+
+\bibitem{arcuri11}
+A.~Arcuri and L.~Briand.
+\newblock A practical guide for using statistical tests to assess randomized
+  algorithms in software engineering.
+\newblock In {\em ICSE'11}, pages 1--10, 2011.
+
+\bibitem{me12d}
+Tim Menzies, Andrew Butcher, Andrian Marcus, Thomas Zimmermann, and David Cok.
+\newblock {Local vs. global models for effort estimation and defect
+  prediction}.
+\newblock In {\em 2011 26th IEEE/ACM International Conference on Automated
+  Software Engineering (ASE 2011)}, pages 343--351. IEEE, nov 2011.
+
+\end{thebibliography}
