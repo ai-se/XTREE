@@ -1,0 +1,8 @@
+## Requirements
+scipy
+numpy
+pandas
+scikit-learn
+matplotlib
+texttable
+
