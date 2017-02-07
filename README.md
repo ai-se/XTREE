@@ -51,7 +51,7 @@
 
 ### Submission 
 
-Submitted to IST. ARXIV Link: https://arxiv.org/abs/1609.03614v3
+Submitted to Information and Software Technology. ARXIV Link: https://arxiv.org/abs/1609.03614v3
 
 ## Cite As
 
@@ -60,7 +60,7 @@ Submitted to IST. ARXIV Link: https://arxiv.org/abs/1609.03614v3
 Author = {Rahul Krishna and Tim Menzies and Lucas Layman},
 Title = {Less is More: Minimizing Code Reorganization using XTREE},
 Year = {2016},
-inProceedings= {IST, submitted},
+journal= {Information and Software Technology, submitted},
 Eprint = {arXiv:1609.03614},
 }
 ```
@@ -81,7 +81,7 @@ Eprint = {arXiv:1609.03614},
 
 ## Latex Source
 
-+ [IST Submission](https://github.com/ai-se/XTREE/tree/master/doc/IST)
++ [Information and Software Technology Submission](https://github.com/ai-se/XTREE/tree/master/doc/IST)
 
 ## Source Code
 
