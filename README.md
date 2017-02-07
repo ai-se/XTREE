@@ -51,7 +51,7 @@
 
 ### Submission 
 
-Submitted to (Information and Software Technology)[https://www.journals.elsevier.com/information-and-software-technology/]. ARXIV Link: https://arxiv.org/abs/1609.03614v3
+Submitted to [Information and Software Technology](https://www.journals.elsevier.com/information-and-software-technology/). ARXIV Link: https://arxiv.org/abs/1609.03614v3
 
 ## Cite As
 
