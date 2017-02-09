@@ -21,21 +21,10 @@ from pdb import set_trace
 from random import uniform, randint, shuffle
 import csv
 
-from sklearn.ensemble import AdaBoostClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.tree import DecisionTreeClassifier
-
-from collections import Counter
-
 from Planners.XTREE.lib import *
-from tools.axe.abcd import _Abcd
 from smote import *
-import Planners.XTREE.lib.makeAmodel as mam
 from methods1 import *
 import numpy as np
-import pandas as pd
-import tools.sk
 
 
 def genTable(tbl, rows):
@@ -250,8 +239,6 @@ class xtrees():
     if not len(best) > 0:
       best = vals
 
-    # Get a list of DoCs (DoC -> (D)epth (o)f (C)orrespondence, btw..)
-    # set_trace()
     attr = {}
     bests = {}
     unq = sorted(list(set([v.DoC for v in best])))  # A list of all DoCs..
