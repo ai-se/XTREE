@@ -9,12 +9,10 @@ if root not in sys.path:
     sys.path.append(root)
 
 import numpy as np
-import csv
-import random
-from tools.sk import rdivDemo
+from Utils.FileUtil import create_tbl
+from oracle.model import rforest
 
-
-class run():
+class main():
     def __init__(self, _n=-1, smote=True, _tuneit=False, dataName=None, reps=12):
 
         self.dataName = dataName
@@ -24,22 +22,17 @@ class run():
         self.train, self.test = self.categorize()
         self.reps = reps
         self._n = _n
-        self.tunedParams = None if not _tuneit \
-            else tuner(self.pred, self.train[_n])
-        self.headers = createTbl(
-            self.train[
-                self._n],
-            isBin=False,
-            bugThres=1).headers
+
+    def secondary_verification(self, train, test):
+        actual = test[test.columns[-1]].values.tolist()
+        predicted, distr = rforest(train, test, tunings=self.tunedParams, smoteit=True)
+        return actual, predicted, distr
 
     def go(self):
-        base = lambda X: sorted(X)[-1] - sorted(X)[0]
-        newRows = lambda newTab: map(lambda Rows: Rows.cells[:-1], newTab._rows)
-        after = lambda newTab: self.pred(
-            train_DF,
-            newTab,
-            tunings=self.tunedParams,
-            smoteit=True)
+
+        def newRows(newTab):
+            return map(lambda Rows: Rows.cells[:-1], newTab._rows)
+
         frac = lambda aft: 1 - (sum([0 if a < 1 else 1 for a in aft]) \
                                 / sum([0 if b < 1 else 1 for b in actual]))
 
@@ -47,14 +40,14 @@ class run():
             out = [planner]
             for _ in xrange(self.reps):
                 predRows = []
-                train_DF = createTbl(self.train[self._n], isBin=True)
-                test_df = createTbl(self.test[self._n], isBin=True)
+                train_DF = create_tbl(self.train[self._n], isBin=True)
+                test_df = create_tbl(self.test[self._n], isBin=True)
                 actual = np.array(Bugs(test_df))
                 before = self.pred(train_DF, test_df,
                                    tunings=self.tunedParams,
                                    smoteit=True)
 
-                predRows = [row.cells for row in createTbl(
+                predRows = [row.cells for row in create_tbl(
                     self.test[self._n], isBin=True)._rows if row.cells[-2] > 0]
 
                 predTest = genTable(test_df, rows=predRows, name='Before_temp')
