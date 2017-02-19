@@ -5,7 +5,7 @@ from pdb import set_trace
 from os import remove as rm
 from random import randint
 from methods1 import createTbl
-from Prediction import rforest, rforest2
+from oracle import rforest, rforest2
 from Planners.XTREE.lib.weights import weights as W
 from os import environ, getcwd
 from os import walk

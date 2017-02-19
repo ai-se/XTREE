@@ -21,7 +21,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from Planners.XTREE.lib.weights import weights as W
 
-from Prediction import *
+from oracle import *
 # from Planners.XTREE.lib.settingsWhere import o
 from cliffsDelta import *
 from hist import *

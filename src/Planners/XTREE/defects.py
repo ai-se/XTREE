@@ -53,8 +53,10 @@ def genTable(tbl, rows, name='tmp'):
 
 
 class run():
-    def __init__(
-            self, pred=rforest, _smoteit=True, _n=-1, _tuneit=False, dataName=None, reps=1):
+    def __init__(self,
+                 pred=rforest, _smoteit=True, _n=-1,
+                 _tuneit=False, dataName=None, reps=1):
+
         self.pred = pred
         self.dataName = dataName
         self.out, self.out_pred = [self.dataName], []
@@ -199,8 +201,7 @@ class run():
             base = lambda X: sorted(X)[-1] - sorted(X)[0]
             return [base([r[i] for r in allRows]) for i in xrange(N)]
 
-        predRows = [row.cells for row in createTbl(
-            self.test[self._n], isBin=True)._rows if row.cells[-2] > 0]
+        predRows = [row.cells for row in createTbl(self.test[self._n], isBin=True)._rows if row.cells[-2] > 0]
 
         write2file(predRows, fname='before')  # save file
 

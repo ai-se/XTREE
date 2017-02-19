@@ -16,7 +16,7 @@ if not root in sys.path: sys.path.append(root)
 from Planners.XTREE.lib.weights import weights as W
 import csv
 
-from Prediction import *
+from oracle import *
 from smote import *
 from methods1 import *
 import numpy as np
