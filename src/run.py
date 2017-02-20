@@ -14,6 +14,7 @@ from Data.handler import get_train_test
 from XTREE.XTREE import execute
 from random import seed
 from Utils.FileUtil import list2dataframe
+from lib.stats import scott_knott
 
 
 def secondary_verification(train, test, patched):
@@ -27,19 +28,24 @@ def impact(before, after):
     return (1 - sum(after) / sum(before)) * 100
 
 
-def run_planner(n_reps=1):
+def change_efficacy(n_reps=1):
     source, target = get_train_test()
-    out = ["XTREE"]
+    out = []
     for train, test in zip(source, target):
         res = [test.split('/')[-2].title()]
-        for _ in xrange(n_reps):
+        for itr in xrange(n_reps):
+            seed(itr)
             patched = execute(train, test)
             before, after, __ = secondary_verification(train, test, patched)
             res.append(impact(before, after))
         out.append(res)
 
-    set_trace()
+    scott_knott.sk_chart(out)
+
+
+def change_succinctness():
+    pass
+
 
 if __name__ == "__main__":
-    seed(1)
-    run_planner()
+    change_efficacy(n_reps=4)

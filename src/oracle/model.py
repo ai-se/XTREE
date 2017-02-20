@@ -26,28 +26,30 @@ def getTunings(fname):
 def rforest(train, target):
     clf = RandomForestClassifier(n_estimators=100, random_state=1)
     source = list2dataframe(train)
-    pseudo_train = list2dataframe(train[:-1])
-    pseudo_test = list2dataframe(train[-1])
-
     features = source.columns[:-1]
     klass = source[source.columns[-1]]
     clf.fit(source[features], klass)
-    pred0 = clf.predict(target[target.columns[:-1]])
+    preds = clf.predict(target[target.columns[:-1]])
     distr = clf.predict_proba(target[target.columns[:-1]])[:, 1]
 
     # Find a threshold for cutoff
-    thresh = 0.5
-    klass0 = pseudo_train[pseudo_train.columns[-1]]
-    clf.fit(pseudo_train[features], klass0)
-    distribution = clf.predict_proba(pseudo_test[pseudo_test.columns[:-1]])
-    fpr, tpr, thresholds = roc_curve(pseudo_test[pseudo_test.columns[-1]], distribution[:, 1])
-    cutoff = 0.66
-    for a, b, c in zip(fpr, tpr, thresholds):
-        if b > cutoff and a < 1-cutoff:
-            thresh = c
+    try:
+        pseudo_train = list2dataframe(train[:-1])
+        pseudo_test = list2dataframe(train[-1])
+        thresh = 0.5
+        klass0 = pseudo_train[pseudo_train.columns[-1]]
+        clf.fit(pseudo_train[features], klass0)
+        distribution = clf.predict_proba(pseudo_test[pseudo_test.columns[:-1]])
+        fpr, tpr, thresholds = roc_curve(pseudo_test[pseudo_test.columns[-1]], distribution[:, 1])
+        cutoff = 0.66
+        for a, b, c in zip(fpr, tpr, thresholds):
+            if b > cutoff and a < 1-cutoff:
+                thresh = c
+        # Apply cutoff
+        preds = [1 if val < thresh else 0 for val in distr]
+    except ValueError:
+        pass
 
-    # Apply cutoff
-    preds = [1 if val < thresh else 0 for val in distr]
     return preds, distr
 
 
