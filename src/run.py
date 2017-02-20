@@ -24,7 +24,7 @@ def secondary_verification(train, test, patched):
 
 
 def impact(before, after):
-    return (1 - sum(before) / sum(after)) * 100
+    return (1 - sum(after) / sum(before)) * 100
 
 
 def run_planner(n_reps=1):
