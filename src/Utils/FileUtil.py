@@ -9,6 +9,8 @@ if root not in sys.path:
     sys.path.append(root)
 
 from pdb import set_trace
+from pandas import read_csv, concat
+from pandas.io.common import EmptyDataError
 from lib.axe.dtree import *
 from lib.axe.table import *
 from AxeUtils.w2 import where2, prepare, leaves
@@ -22,6 +24,14 @@ def new_table(tbl, headerLabel, Rows):
     newHead.name = headerLabel
     tbl2.headers = tbl.headers + [newHead]
     return clone(tbl2, rows=Rows)
+
+
+def list2dataframe(lst):
+    try:
+        data = [read_csv(elem) for elem in lst]
+    except EmptyDataError:
+        return read_csv(lst)
+    return concat(data, ignore_index=True)
 
 
 def create_tbl(

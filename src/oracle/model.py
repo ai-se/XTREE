@@ -24,17 +24,17 @@ def getTunings(fname):
 
 def rforest(source, target):
     clf = RandomForestClassifier(n_estimators=100, random_state=1)
-    # Binarize source
-    # source.loc[source[source.columns[-1]] > 0, source.columns[-1]] = 1
     try:
         source = SMOTE(source)
     except ValueError:
         pass
     features = source.columns[:-1]
     klass = source[source.columns[-1]]
+    set_trace()
     clf.fit(source[features], klass)
     preds = clf.predict(target[target.columns[:-1]])
-    return preds
+    distr = clf.predict_proba(target[target.columns[:-1]])
+    return preds, distr[:, 1]
 
 
 def _test_model():

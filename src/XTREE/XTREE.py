@@ -15,7 +15,7 @@ from tools.sk import *
 from tools.oracle import *
 import tools.pyC45 as pyC45
 from random import uniform
-
+from Utils.FileUtil import list2dataframe
 
 def trueValue(all, test):
     set_trace()
@@ -140,10 +140,10 @@ class patches:
 def execute(train, test):
     """XTREE"""
 
-    train_DF = csv2DF(train, toBin=True)
-    test_DF = csv2DF(test)
+    train_DF = list2dataframe(train)
+    test_DF = list2dataframe(test)
     tree = pyC45.dtree(train_DF)
-    set_trace()
+    # set_trace()
     patch = patches(train=train, test=test, trainDF=train_DF, testDF=test_DF, tree=tree)
     return patch.main()
 
