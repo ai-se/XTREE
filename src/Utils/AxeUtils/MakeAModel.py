@@ -8,7 +8,6 @@ root = os.path.join(os.getcwd().split('src')[0], 'src')
 if root not in sys.path:
     sys.path.append(root)
 
-from lib.axe.table import *
 
 def say(text):
   sys.stdout.write(str(text)), sys.stdout.write(' ')

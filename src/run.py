@@ -8,13 +8,12 @@ root = os.path.join(os.getcwd().split('src')[0], 'src')
 if root not in sys.path:
     sys.path.append(root)
 
-from pdb import set_trace
 from oracle.model import rforest
 from Data.handler import get_train_test
 from XTREE.XTREE import execute
 from random import seed
 from Utils.FileUtil import list2dataframe
-from lib.stats import scott_knott
+from tools.stats import scott_knott
 
 
 def secondary_verification(train, test, patched):

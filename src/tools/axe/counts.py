@@ -1,9 +1,44 @@
 from __future__ import division
 import sys
 from lib import *
+from settings import *
 sys.dont_write_bytecode = True
+from numpy import log2
+# XXXX what is k and why does Sym need it?
 
-# XXXX whatis k and why does Sym need it?
+def test(f=None,cache=[]):
+  if f: 
+    cache += [f]
+    return f
+  ok = no = 0
+  for t in cache: 
+    print '#',t.func_name ,t.__doc__ or ''
+    prefix, n, found = None, 0, t() or []
+    while found:
+      this, that = found.pop(0), found.pop(0)
+      if this == that:
+        ok, n, prefix = ok+1, n+1,'CORRECT:'
+      else: 
+        no, n, prefix = no+1, n+1,'WRONG  :'
+      print prefix,t.func_name,'test',n
+  if ok+no:
+    print '\n# Final score: %s/%s = %s%% CORRECT' \
+        % (ok,(ok+no),int(100*ok/(ok+no)))
+
+class Thing(object):
+  id = -1
+  def __init__(i,**fields) : 
+    i.override(fields)
+    i.newId()
+  def newId(i):
+    i._id = Thing.id = Thing.id + 1
+  def also(i,**d)  : return i.override(d)
+  def override(i,d): i.__dict__.update(d); return i
+  def __hash__(i) : return i._id
+ # def __eq__(i,j)  : return i._id == j._id
+  #def __neq__(i,j) : return i._id != j._id
+
+
 class Sym(Thing):
   def __init__(i,inits=[],w=1):
     i.newId()
@@ -119,6 +154,7 @@ class Num(Thing):
     i.w=w
     i.zero()
     for x in init: i + x
+    for x in init: x=i.norm(i,x)
   def zero(i):
     i.lo,i.hi = 10**32,-10**32
     i.some = Sample([],i.opts)
@@ -154,7 +190,7 @@ class Num(Thing):
     if normalize:
       x,y=i.norm(x),i.norm(y)
     return (x-y)**2
-  def norm(i,x):
+  def norm(i,x): 
     return (x - i.lo)/ (i.hi - i.lo + 0.00001)
   def far(i,x):
     return i.lo if x > (i.hi - i.lo)/2 else i.hi

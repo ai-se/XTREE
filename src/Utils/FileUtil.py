@@ -11,8 +11,7 @@ if root not in sys.path:
 from pdb import set_trace
 from pandas import read_csv, concat
 from pandas.io.common import EmptyDataError
-from lib.axe.dtree import *
-from lib.axe.table import *
+from tools.axe.dtree import *
 from AxeUtils.w2 import where2, prepare, leaves
 from AxeUtils.MakeAModel import MakeAModel
 

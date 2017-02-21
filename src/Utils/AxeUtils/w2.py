@@ -19,10 +19,9 @@ root = os.path.join(os.getcwd().split('src')[0], 'src')
 if root not in sys.path:
     sys.path.append(root)
 
-from lib.axe.demos import *
-from lib.axe.libWhere import *
-from lib.axe.nasa93 import *
-from lib.axe.settingsWhere import *
+from tools.axe.demos import *
+from tools.axe.nasa93 import *
+from tools.axe.settingsWhere import *
 
 sys.dont_write_bytecode = True
 

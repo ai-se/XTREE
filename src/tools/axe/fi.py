@@ -33,7 +33,7 @@ def ediv(lst, lvl=0,tiny=The.tree.min,
           maybe= lhs.n/n0*lhs.ent()+ rhs.n/n0*rhs.ent()       
           if maybe < least : 
             gain = e0 - maybe
-            delta= log2(3**k0-2)-(ke0- ke(rhs)-ke(lhs))
+            delta= log2(float((3**k0-2)-(ke0- ke(rhs)-ke(lhs))))
             if gain >= (log2(n0-1) + delta)/n0: 
               cut,least = j,maybe
       last= now
