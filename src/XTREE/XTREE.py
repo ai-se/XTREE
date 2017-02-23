@@ -17,6 +17,7 @@ import tools.pyC45 as pyC45
 from random import uniform
 from Utils.FileUtil import list2dataframe
 
+
 def trueValue(all, test):
     set_trace()
 
@@ -110,7 +111,8 @@ class patches:
                 best = sorted([l for l in leaves if l.score < current.score], key=lambda F: i.howfar(current, F))[0]
             else:
                 best = \
-                sorted([l for l in leaves if l.score <= 0.01 * current.score], key=lambda F: i.howfar(current, F))[0]
+                    sorted([l for l in leaves if l.score <= 0.01 * current.score], key=lambda F: i.howfar(current, F))[
+                        0]
         except:
             return testInst.values.tolist()[0]
 
@@ -132,8 +134,13 @@ class patches:
         return testInst.values.tolist()[0]
 
     def main(i):
-        newRows = [i.patchIt(i.testDF.iloc[n]) for n in xrange(i.testDF.shape[0]) if
-                   i.testDF.iloc[n][-1] > 0 or i.testDF.iloc[n][-1] == True]
+        newRows = []
+        for n in xrange(i.testDF.shape[0]):
+            if i.testDF.iloc[n][-1] > 0 or i.testDF.iloc[n][-1] == True:
+                newRows.append(i.patchIt(i.testDF.iloc[n]))
+            else:
+                set_trace()
+                newRows.append(i.testDF.iloc[n].tolist())
         return pd.DataFrame(newRows, columns=i.testDF.columns)
 
 
