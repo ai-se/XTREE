@@ -162,6 +162,6 @@ if __name__ == '__main__':
         train, test = explore(dir='../Data/Jureczko/', name=name)
         aft = [name]
         for _ in xrange(10):
-            aft.append(xtree(train, test))
+            aft.append(execute(train, test))
         E.append(aft)
     rdivDemo(E)
