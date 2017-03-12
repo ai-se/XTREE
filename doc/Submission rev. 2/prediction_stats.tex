@@ -1,0 +1,60 @@
+\begin{figure*}[hbtp!]
+	\small
+	\begin{center}
+		\begin{minipage}{.46\linewidth}
+			\begin{tabular}{r@{~}|l@{~}|r@{~}|l@{~}|r@{~}|r@{~}|} \cline{2-6}
+			 
+				
+				& \multicolumn{5}{c|}{ Data set  properties}\\ 
+			 
+				& \multicolumn{2}{c|}{training}   & \multicolumn{3}{c|}{testing}      \\ \cline{2-6}
+				data set      & versions           & cases & versions     & cases    & \% defective             \\ \hline
+				jedit    & 3.2, 4.0, 4.1, 4.2 & 1257      & 4.3          & 492          & 2 \\
+				ivy      & 1.1, 1.4           & 352       & 2.0          & 352          & 11 \\
+				camel    & 1.0, 1.2, 1.4      & 1819      & 1.6          & 965          & 19 \\
+				ant      & 1.3, 1.4, 1.5, 1.6 & 947       & 1.7          & 745          & 22 \\
+				synapse  & 1.0, 1.1           & 379       & 1.2          & 256          & 34 \\
+				velocity & 1.4, 1.5           & 410       & 1.6          & 229          & 34 \\
+				lucene   & 2.0, 2.2           & 442       & 2.4          & 340          & 59 \\
+				poi      & 1.5, 2, 2.5        & 936       & 3.0          & 442          & 64 \\
+			 xerces   & 1.0, 1.2, 1.3      & 1055      & 1.4          & 588          & 74  \\ 
+			 log4j    & 1.0, 1.1           & 244       & 1.2          & 205          & 92   \\
+			 xalan    & 2.4, 2.5, 2.6      & 2411      & 2.7          & 909          & 99  \\\hline 
+				
+				
+			\end{tabular}\end{minipage}~~~~~~\begin{minipage}{.4\linewidth}
+			\begin{tabular}{|rrr|rrr|rr|l} \cline{1-8}
+			 
+				\multicolumn{8}{|c|}{  Results from learning}\\
+			 
+				\multicolumn{3}{|c|}{untuned} & \multicolumn{3}{c|}{tuned} & \multicolumn{2}{c|}{change}\\
+				\cline{1-8}
+				
+				pd & pf & good? & pd & pf & good? & pd & pf\\\cline{1-8}
+				\rowcolor{celadon}55 & 29 &   & 64 & 29 & y & 9 & 0&$\star$\\
+				\rowcolor{celadon}	65 & 35 & y & 65 & 28 & y & 0 & -7&$\star$\\
+				49 & 31 &   & 56 & 37 &   & 5 & 6\\
+				\rowcolor{celadon}	49 & 13 & y & 63 & 16 & y & 14 & 3&$\star$\\
+				45 & 19 &   & 47 & 15 &   & 2 & -4\\
+				78 & 60 &   & 76 & 60 &   & -2 & 0\\
+				56 & 25 &   & 60 & 25 & y & 4 & 0\\
+				\rowcolor{celadon}	56 & 31 &   & 60 & 10 & y & 4 & -21&$\star$\\
+			\rowcolor{lavenderpink}	30 & 31 &   & 40 & 29 &   & 10 & -2&$\times$\\
+				\rowcolor{lavenderpink}32 & 6 &   & 30 & 6 &   & -2 & 0&$\times$\\
+				\rowcolor{lavenderpink}38 & 9 &   & 47 & 9 &   & 9 & 0&$\times$\\
+				\hline 
+			\end{tabular}
+			
+		\end{minipage}
+	\end{center}    
+	
+	\caption{Training and test {\em data set properties} for  Jureczko data ,
+		sorted by \% defective examples.
+		On the right-hand-side, we show the {\em results from learning}.
+		Data is usable if it has a recall of 60\% or more and false alarm of 30\% or less (and note that, after tuning, there are more usable data sets than before). Results  	\colorbox{celadon}{ marked with ``$\star$''} show large improvements in performance, after tuning
+		(lower {\em pf} or higher {\em pd}).
+		Data in  the  \colorbox{lavenderpink}{three bottom rows}, marked with ``$\times$'', are  performing
+		poorly-- that data so many defective examples  that it  is hard for
+		our learners to distinguish between classes.
+	}\label{fig:j}
+\end{figure*}
