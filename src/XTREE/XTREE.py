@@ -139,7 +139,6 @@ class patches:
             if i.testDF.iloc[n][-1] > 0 or i.testDF.iloc[n][-1] == True:
                 newRows.append(i.patchIt(i.testDF.iloc[n]))
             else:
-                set_trace()
                 newRows.append(i.testDF.iloc[n].tolist())
         return pd.DataFrame(newRows, columns=i.testDF.columns)
 

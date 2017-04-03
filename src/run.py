@@ -8,6 +8,7 @@ root = os.path.join(os.getcwd().split('src')[0], 'src')
 if root not in sys.path:
     sys.path.append(root)
 
+from pdb import set_trace
 from oracle.model import rforest
 from Data.handler import get_train_test
 from XTREE.XTREE import execute
@@ -36,6 +37,9 @@ def change_efficacy(n_reps=1):
             seed(itr)
             patched = execute(train, test)
             before, after, __ = secondary_verification(train, test, patched)
+            if impact(before, after):
+                set_trace()
+
             res.append(impact(before, after))
         out.append(res)
 
