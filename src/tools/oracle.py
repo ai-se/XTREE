@@ -6,7 +6,7 @@ from random import choice, seed as rseed, uniform as rand
 import pandas as pd
 import numpy as np
 from texttable import Texttable
-from stats import ABCD
+from stats import abcd
 from misc import *
 from pdb import set_trace
 from sklearn.neighbors import NearestNeighbors, BallTree, KDTree
