@@ -1,0 +1,124 @@
+\begin{figure}[tbp]
+%{\scriptsize \textbf{Ant}\\[0.1cm]}
+
+
+{\scriptsize \hspace{3.5cm}\underline{Observed Improvements (from \eq{diff})}}\vspace{2mm}
+ 
+
+{\scriptsize \textbf{Ant}~~~~~~~~ \begin{tabular}{{l@{~~~~}l@{~~~~}|r@{~~~~}r@{}c@{~~~}r}}
+\arrayrulecolor{lightgray}
+\rowcolor{lightgray}\textbf{Rank} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR~~~} & \\
+  1 &         XTREE &    56   &  21  & \quart{54}{25}{65}{1} \\
+\hline  2 &        Alves &    32   &  17  & \quart{28}{20}{37}{1} \\
+\hline  3 &     Shatnawi &    15   &  4.2 & \quart{15}{6}{18}{1} \\
+  3 &           CD &    12   &  0  & \quart{15}{0}{15}{6} \\
+\hline \end{tabular}}\\
+
+%{\scriptsize \textbf{Lucene}\\[0.1cm]}
+%{\scriptsize \textbf{Poi}\\[0.1cm]}
+{\scriptsize 
+
+\textbf{Poi}~~~~~~~~ \begin{tabular}{{l@{~~~~}l@{~~~~}|r@{~~~~}r@{~~}c@{}r}}
+\arrayrulecolor{lightgray}
+\rowcolor{lightgray}\textbf{Rank} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR~~~} & \\
+        1 &         XTREE &    20   &  16  & \quart{39}{40}{51}{2} \\
+\hline  2 &        Alves &    14   &  16  & \quart{21}{41}{37}{2} \\
+\hline  3 &           CD &    11   &  0  & \quart{23}{0}{23}{7} \\
+        3 &     Shatnawi &    8   &  1  & \quart{19}{5}{21}{2} \\
+\hline \end{tabular}}\\
+
+{\scriptsize \textbf{Lucene}~ \begin{tabular}{{l@{~~~~}l@{~~~~}|r@{~~~~}r@{~~}c@{}r}}
+\arrayrulecolor{lightgray}
+\rowcolor{lightgray}\textbf{Rank} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR~~~} & \\
+        1 &         XTREE &    16   &  6  & \quart{50}{29}{71}{4} \\
+        1 &     Shatnawi  &    15   &  2  & \quart{63}{10}{67}{4} \\
+\hline  2 &           CD  &    13   &  0  & \quart{55}{0}{55}{6} \\
+\hline  3 &        Alves  &    9   &  4  & \quart{33}{19}{42}{4} \\
+\hline \end{tabular}}\\
+
+
+%{\scriptsize \textbf{Ivy}\\[0.1cm]}
+{\scriptsize \textbf{Ivy}~~~~~~~~ \begin{tabular}{{l@{~~~~}l@{~~~~}|r@{~~~~}r@{~~}c@{}r}}
+\arrayrulecolor{lightgray}
+\rowcolor{lightgray}\textbf{Rank} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR~~~} & \\
+        1 &        Alves &    67   &  20  & \quart{58}{21}{71}{1} \\
+\hline  2 &         XTREE &    52   &  22  & \quart{42}{24}{55}{1} \\
+\hline  3 &           CD &    35   &  0  & \quart{27}{0}{27}{2} \\
+\hline  4 &     Shatnawi &    20   &  7  & \quart{18}{8}{21}{1} \\
+\hline \end{tabular}}\\
+
+%{\scriptsize \textbf{Jedit}\\[0.1cm]}
+
+{\scriptsize  \textbf{Jedit}~~~~~ \begin{tabular}{{l@{~~~}l@{~~~~}|r@{~~~~}r@{~~}c@{}r}}
+\arrayrulecolor{lightgray}
+\rowcolor{lightgray}\textbf{Rank} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR~~~} & \\
+  1 &        Alves &    36   &  7  & \quart{60}{10}{66}{1} \\
+  1 &        XTREE &    36   &  0  & \quart{66}{0}{66}{2} \\
+  1 &     Shatnawi &    36   &  9  & \quart{53}{13}{66}{1} \\
+  1 &          CD &    36   &  0  & \quart{66}{0}{66}{2} \\
+\hline \end{tabular}}\\
+\caption{Results for {\bf RQ1} from the
+Jureczko   data sets.  Results from 40 repeats.
+Values come from \eq{diff}.
+Values near 0
+imply no improvement,
+{\em Larger} median values are {\em better}. 
+Note that XTREE and Alves are usually best and CD and Shatnami
+are usually worse.}
+\label{fig:jur2}
+\end{figure}
+
+% ## ant
+
+% {\scriptsize \begin{tabular}{l@{~~~}l@{~~~}r@{~~~}r@{~~~}c}
+% \arrayrulecolor{lightgray}
+% \textbf{XTREE} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR} & \\\hline
+%   1 &     Shatnawi &    15.66  &  4.82 & \quart{15}{6}{18}{1} \\
+% \hline  2 &        Alves &    32.53  &  17.47 & \quart{28}{20}{37}{1} \\
+% \hline  3 &         XTREE &    56.02  &  21.68 & \quart{54}{25}{65}{1} \\
+% \hline \end{tabular}}
+
+
+% ## ivy
+
+% {\scriptsize \begin{tabular}{l@{~~~}l@{~~~}r@{~~~}r@{~~~}c}
+% \arrayrulecolor{lightgray}
+% \textbf{XTREE} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR} & \\\hline
+%   1 &     Shatnawi &    20.0  &  7.5 & \quart{18}{8}{21}{1} \\
+% \hline  2 &         XTREE &    52.5  &  22.5 & \quart{42}{24}{55}{1} \\
+% \hline  3 &        Alves &    67.5  &  20.0 & \quart{58}{21}{71}{1} \\
+% \hline \end{tabular}}
+
+
+% ## jedit
+
+% {\scriptsize \begin{tabular}{l@{~~~}l@{~~~}r@{~~~}r@{~~~}c}
+% \arrayrulecolor{lightgray}
+% \textbf{XTREE} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR} & \\\hline
+%   1 &     Shatnawi &    36.36  &  9.09 & \quart{53}{13}{53}{1} \\
+%   1 &         XTREE &    36.36  &  0.0 & \quart{53}{0}{53}{1} \\
+%   1 &        Alves &    45.45  &  27.28 & \quart{39}{40}{66}{1} \\
+% \hline \end{tabular}}
+
+
+% ## lucene
+
+% {\scriptsize \begin{tabular}{l@{~~~}l@{~~~}r@{~~~}r@{~~~}c}
+% \arrayrulecolor{lightgray}
+% \textbf{XTREE} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR} & \\\hline
+%   1 &        Alves &    9.85  &  4.44 & \quart{33}{19}{42}{4} \\
+% \hline  2 &     Shatnawi &    15.76  &  2.45 & \quart{63}{10}{67}{4} \\
+%   2 &         XTREE &    16.75  &  6.9 & \quart{50}{29}{71}{4} \\
+% \hline \end{tabular}}
+
+
+% ## poi
+
+% {\scriptsize \begin{tabular}{l@{~~~}l@{~~~}r@{~~~}r@{~~~}c}
+% \arrayrulecolor{lightgray}
+% \textbf{XTREE} & \textbf{Treatment} & \textbf{Median} & \textbf{IQR} & \\\hline
+%   1 &     Shatnawi &    8.53  &  1.78 & \quart{19}{5}{21}{2} \\
+% \hline  2 &        Alves &    14.95  &  16.38 & \quart{21}{41}{37}{2} \\
+% \hline  3 &         XTREE &    20.64  &  16.02 & \quart{39}{40}{51}{2} \\
+% \hline \end{tabular}}
+
